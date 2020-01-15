@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<xml>
+	<item name="Users" target="" activityName="Users" id="133" url="Pages/Desktop/Users/SearchUserData.aspx">
+		<item name="Access Mode" target="" activityName="Users/ListAccessModeData" id="1001" url="Pages/Desktop/Users/ListAccessModeData.aspx">
+			<item name="All" target="" activityName="Users/ListAccessModeData" id="10002" url="Pages/Desktop/Users/ListAccessModeData.aspx"></item>
+			<item name="Details" target="" activityName="Users/EditAccessMode" id="10001" url="Pages/Desktop/Users/EditAccessMode.aspx"></item>
+		</item>
+		<item name="Activity" target="" activityName="Users/ListActivityData" id="1006" url="Pages/Desktop/Users/ListActivityData.aspx">
+			<item name="All" target="" activityName="Users/ListActivityData" id="10012" url="Pages/Desktop/Users/ListActivityData.aspx"></item>
+			<item name="Details" target="" activityName="Users/EditActivity" id="10011" url="Pages/Desktop/Users/EditActivity.aspx"></item>
+		</item>
+		<item name="User" target="" activityName="Users/SearchUserData" id="1077" url="Pages/Desktop/Users/SearchUserData.aspx">
+			<item name="Search" target="" activityName="Users/SearchUserData" id="10154" url="Pages/Desktop/Users/SearchUserData.aspx"></item>
+			<item name="Details" target="" activityName="Users/EditUser" id="10153" url="Pages/Desktop/Users/EditUser.aspx"></item>
+		</item>
+		<item name="User Role" target="" activityName="Users/ListUserRoleData" id="1078" url="Pages/Desktop/Users/ListUserRoleData.aspx">
+			<item name="All" target="" activityName="Users/ListUserRoleData" id="10156" url="Pages/Desktop/Users/ListUserRoleData.aspx"></item>
+			<item name="Details" target="" activityName="Users/EditUserRole" id="10155" url="Pages/Desktop/Users/EditUserRole.aspx"></item>
+		</item>
+	</item>
+	<item name="Accounts" target="" activityName="Accounts" id="114" url="Pages/Desktop/Accounts/SearchCurrencyConversionData.aspx">
+		<item name="Account" target="" activityName="Accounts/SearchAccountData" id="1002" url="Pages/Desktop/Accounts/SearchAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchAccountData" id="10004" url="Pages/Desktop/Accounts/SearchAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditAccount" id="10003" url="Pages/Desktop/Accounts/EditAccount.aspx"></item>
+		</item>
+		<item name="Account Attribute" target="" activityName="Accounts/SearchAccountAttributeData" id="1003" url="Pages/Desktop/Accounts/SearchAccountAttributeData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchAccountAttributeData" id="10006" url="Pages/Desktop/Accounts/SearchAccountAttributeData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditAccountAttribute" id="10005" url="Pages/Desktop/Accounts/EditAccountAttribute.aspx"></item>
+		</item>
+		<item name="Account Attribute Value" target="" activityName="Accounts/SearchAccountAttributeValueData" id="1004" url="Pages/Desktop/Accounts/SearchAccountAttributeValueData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchAccountAttributeValueData" id="10008" url="Pages/Desktop/Accounts/SearchAccountAttributeValueData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditAccountAttributeValue" id="10007" url="Pages/Desktop/Accounts/EditAccountAttributeValue.aspx"></item>
+		</item>
+		<item name="Account Sub Type" target="" activityName="Accounts/ListAccountSubTypeData" id="1005" url="Pages/Desktop/Accounts/ListAccountSubTypeData.aspx">
+			<item name="All" target="" activityName="Accounts/ListAccountSubTypeData" id="10010" url="Pages/Desktop/Accounts/ListAccountSubTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditAccountSubType" id="10009" url="Pages/Desktop/Accounts/EditAccountSubType.aspx"></item>
+		</item>
+		<item name="Bank Account" target="" activityName="Accounts/SearchBankAccountData" id="1012" url="Pages/Desktop/Accounts/SearchBankAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchBankAccountData" id="10024" url="Pages/Desktop/Accounts/SearchBankAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditBankAccount" id="10023" url="Pages/Desktop/Accounts/EditBankAccount.aspx"></item>
+		</item>
+		<item name="Bill Pay Account" target="" activityName="Accounts/SearchBillPayAccountData" id="1014" url="Pages/Desktop/Accounts/SearchBillPayAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchBillPayAccountData" id="10028" url="Pages/Desktop/Accounts/SearchBillPayAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditBillPayAccount" id="10027" url="Pages/Desktop/Accounts/EditBillPayAccount.aspx"></item>
+		</item>
+		<item name="Credit Account" target="" activityName="Accounts/SearchCreditAccountData" id="1020" url="Pages/Desktop/Accounts/SearchCreditAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchCreditAccountData" id="10040" url="Pages/Desktop/Accounts/SearchCreditAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditCreditAccount" id="10039" url="Pages/Desktop/Accounts/EditCreditAccount.aspx"></item>
+		</item>
+		<item name="Credit Card Type" target="" activityName="Accounts/ListCreditCardTypeData" id="1021" url="Pages/Desktop/Accounts/ListCreditCardTypeData.aspx">
+			<item name="All" target="" activityName="Accounts/ListCreditCardTypeData" id="10042" url="Pages/Desktop/Accounts/ListCreditCardTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditCreditCardType" id="10041" url="Pages/Desktop/Accounts/EditCreditCardType.aspx"></item>
+		</item>
+		<item name="Currency" target="" activityName="Accounts/ListCurrencyData" id="1022" url="Pages/Desktop/Accounts/ListCurrencyData.aspx">
+			<item name="All" target="" activityName="Accounts/ListCurrencyData" id="10044" url="Pages/Desktop/Accounts/ListCurrencyData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditCurrency" id="10043" url="Pages/Desktop/Accounts/EditCurrency.aspx"></item>
+		</item>
+		<item name="Currency Conversion" target="" activityName="Accounts/SearchCurrencyConversionData" id="1023" url="Pages/Desktop/Accounts/SearchCurrencyConversionData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchCurrencyConversionData" id="10046" url="Pages/Desktop/Accounts/SearchCurrencyConversionData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditCurrencyConversion" id="10045" url="Pages/Desktop/Accounts/EditCurrencyConversion.aspx"></item>
+		</item>
+		<item name="Debit Account" target="" activityName="Accounts/SearchDebitAccountData" id="1027" url="Pages/Desktop/Accounts/SearchDebitAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchDebitAccountData" id="10054" url="Pages/Desktop/Accounts/SearchDebitAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditDebitAccount" id="10053" url="Pages/Desktop/Accounts/EditDebitAccount.aspx"></item>
+		</item>
+		<item name="Frequency" target="" activityName="Accounts/ListFrequencyData" id="1039" url="Pages/Desktop/Accounts/ListFrequencyData.aspx">
+			<item name="All" target="" activityName="Accounts/ListFrequencyData" id="10078" url="Pages/Desktop/Accounts/ListFrequencyData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditFrequency" id="10077" url="Pages/Desktop/Accounts/EditFrequency.aspx"></item>
+		</item>
+		<item name="Fund Account" target="" activityName="Accounts/SearchFundAccountData" id="1041" url="Pages/Desktop/Accounts/SearchFundAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchFundAccountData" id="10082" url="Pages/Desktop/Accounts/SearchFundAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditFundAccount" id="10081" url="Pages/Desktop/Accounts/EditFundAccount.aspx"></item>
+		</item>
+		<item name="Fund Account Type" target="" activityName="Accounts/ListFundAccountTypeData" id="1042" url="Pages/Desktop/Accounts/ListFundAccountTypeData.aspx">
+			<item name="All" target="" activityName="Accounts/ListFundAccountTypeData" id="10084" url="Pages/Desktop/Accounts/ListFundAccountTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditFundAccountType" id="10083" url="Pages/Desktop/Accounts/EditFundAccountType.aspx"></item>
+		</item>
+		<item name="Loan Account" target="" activityName="Accounts/SearchLoanAccountData" id="1043" url="Pages/Desktop/Accounts/SearchLoanAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchLoanAccountData" id="10086" url="Pages/Desktop/Accounts/SearchLoanAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditLoanAccount" id="10085" url="Pages/Desktop/Accounts/EditLoanAccount.aspx"></item>
+		</item>
+		<item name="Meta Transfer Account" target="" activityName="Accounts/SearchMetaTransferAccountData" id="1053" url="Pages/Desktop/Accounts/SearchMetaTransferAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchMetaTransferAccountData" id="10106" url="Pages/Desktop/Accounts/SearchMetaTransferAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditMetaTransferAccount" id="10105" url="Pages/Desktop/Accounts/EditMetaTransferAccount.aspx"></item>
+		</item>
+		<item name="Payment Institution" target="" activityName="Accounts/ListPaymentInstitutionData" id="1062" url="Pages/Desktop/Accounts/ListPaymentInstitutionData.aspx">
+			<item name="All" target="" activityName="Accounts/ListPaymentInstitutionData" id="10124" url="Pages/Desktop/Accounts/ListPaymentInstitutionData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditPaymentInstitution" id="10123" url="Pages/Desktop/Accounts/EditPaymentInstitution.aspx"></item>
+		</item>
+		<item name="Stored Value Account" target="" activityName="Accounts/SearchStoredValueAccountData" id="1074" url="Pages/Desktop/Accounts/SearchStoredValueAccountData.aspx">
+			<item name="Search" target="" activityName="Accounts/SearchStoredValueAccountData" id="10148" url="Pages/Desktop/Accounts/SearchStoredValueAccountData.aspx"></item>
+			<item name="Details" target="" activityName="Accounts/EditStoredValueAccount" id="10147" url="Pages/Desktop/Accounts/EditStoredValueAccount.aspx"></item>
+		</item>
+	</item>
+	<item name="User Experience" target="" activityName="UserExperience" id="132" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx">
+		<item name="Admin Help" target="" activityName="UserExperience/SearchAdminHelpData" id="1007" url="Pages/Desktop/UserExperience/SearchAdminHelpData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchAdminHelpData" id="10014" url="Pages/Desktop/UserExperience/SearchAdminHelpData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditAdminHelp" id="10013" url="Pages/Desktop/UserExperience/EditAdminHelp.aspx"></item>
+		</item>
+		<item name="Friendly Error" target="" activityName="UserExperience/SearchFriendlyErrorData" id="1040" url="Pages/Desktop/UserExperience/SearchFriendlyErrorData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchFriendlyErrorData" id="10080" url="Pages/Desktop/UserExperience/SearchFriendlyErrorData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditFriendlyError" id="10079" url="Pages/Desktop/UserExperience/EditFriendlyError.aspx"></item>
+		</item>
+		<item name="Site Help" target="" activityName="UserExperience/SearchSiteHelpData" id="1069" url="Pages/Desktop/UserExperience/SearchSiteHelpData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchSiteHelpData" id="10138" url="Pages/Desktop/UserExperience/SearchSiteHelpData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteHelp" id="10137" url="Pages/Desktop/UserExperience/EditSiteHelp.aspx"></item>
+		</item>
+		<item name="Site Help Definition" target="" activityName="UserExperience/ListSiteHelpDefinitionData" id="1070" url="Pages/Desktop/UserExperience/ListSiteHelpDefinitionData.aspx">
+			<item name="All" target="" activityName="UserExperience/ListSiteHelpDefinitionData" id="10140" url="Pages/Desktop/UserExperience/ListSiteHelpDefinitionData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteHelpDefinition" id="10139" url="Pages/Desktop/UserExperience/EditSiteHelpDefinition.aspx"></item>
+		</item>
+		<item name="Site Help Group" target="" activityName="UserExperience/ListSiteHelpGroupData" id="1071" url="Pages/Desktop/UserExperience/ListSiteHelpGroupData.aspx">
+			<item name="All" target="" activityName="UserExperience/ListSiteHelpGroupData" id="10142" url="Pages/Desktop/UserExperience/ListSiteHelpGroupData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteHelpGroup" id="10141" url="Pages/Desktop/UserExperience/EditSiteHelpGroup.aspx"></item>
+		</item>
+		<item name="Site Label" target="" activityName="UserExperience/SearchSiteLabelData" id="1072" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchSiteLabelData" id="10144" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteLabel" id="10143" url="Pages/Desktop/UserExperience/EditSiteLabel.aspx"></item>
+		</item>
+		<item name="Site Label Definition" target="" activityName="UserExperience/ListSiteLabelDefinitionData" id="1073" url="Pages/Desktop/UserExperience/ListSiteLabelDefinitionData.aspx">
+			<item name="All" target="" activityName="UserExperience/ListSiteLabelDefinitionData" id="10146" url="Pages/Desktop/UserExperience/ListSiteLabelDefinitionData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteLabelDefinition" id="10145" url="Pages/Desktop/UserExperience/EditSiteLabelDefinition.aspx"></item>
+		</item>
+	</item>
+	<item name="Core" target="" activityName="Core" id="110" url="Pages/Desktop/Core/SearchBaseAttributeData.aspx">
+		<item name="Attribute Type" target="" activityName="Core/ListAttributeTypeData" id="1008" url="Pages/Desktop/Core/ListAttributeTypeData.aspx">
+			<item name="All" target="" activityName="Core/ListAttributeTypeData" id="10016" url="Pages/Desktop/Core/ListAttributeTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditAttributeType" id="10015" url="Pages/Desktop/Core/EditAttributeType.aspx"></item>
+		</item>
+		<item name="Base Attribute" target="" activityName="Core/SearchBaseAttributeData" id="1013" url="Pages/Desktop/Core/SearchBaseAttributeData.aspx">
+			<item name="Search" target="" activityName="Core/SearchBaseAttributeData" id="10026" url="Pages/Desktop/Core/SearchBaseAttributeData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditBaseAttribute" id="10025" url="Pages/Desktop/Core/EditBaseAttribute.aspx"></item>
+		</item>
+		<item name="Data Type" target="" activityName="Core/ListDataTypeData" id="1025" url="Pages/Desktop/Core/ListDataTypeData.aspx">
+			<item name="All" target="" activityName="Core/ListDataTypeData" id="10050" url="Pages/Desktop/Core/ListDataTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditDataType" id="10049" url="Pages/Desktop/Core/EditDataType.aspx"></item>
+		</item>
+		<item name="Debug Attribute" target="" activityName="Core/SearchDebugAttributeData" id="1028" url="Pages/Desktop/Core/SearchDebugAttributeData.aspx">
+			<item name="Search" target="" activityName="Core/SearchDebugAttributeData" id="10056" url="Pages/Desktop/Core/SearchDebugAttributeData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditDebugAttribute" id="10055" url="Pages/Desktop/Core/EditDebugAttribute.aspx"></item>
+		</item>
+		<item name="Debug Attribute Value Log" target="" activityName="Core/SearchDebugAttributeValueLogData" id="1029" url="Pages/Desktop/Core/SearchDebugAttributeValueLogData.aspx">
+			<item name="Search" target="" activityName="Core/SearchDebugAttributeValueLogData" id="10058" url="Pages/Desktop/Core/SearchDebugAttributeValueLogData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditDebugAttributeValueLog" id="10057" url="Pages/Desktop/Core/EditDebugAttributeValueLog.aspx"></item>
+		</item>
+		<item name="Debug Log" target="" activityName="Core/SearchDebugLogData" id="1030" url="Pages/Desktop/Core/SearchDebugLogData.aspx">
+			<item name="Search" target="" activityName="Core/SearchDebugLogData" id="10060" url="Pages/Desktop/Core/SearchDebugLogData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditDebugLog" id="10059" url="Pages/Desktop/Core/EditDebugLog.aspx"></item>
+		</item>
+		<item name="Error" target="" activityName="Core/ListErrorData" id="1032" url="Pages/Desktop/Core/ListErrorData.aspx">
+			<item name="All" target="" activityName="Core/ListErrorData" id="10064" url="Pages/Desktop/Core/ListErrorData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditError" id="10063" url="Pages/Desktop/Core/EditError.aspx"></item>
+		</item>
+		<item name="Event Type" target="" activityName="Core/ListEventTypeData" id="1035" url="Pages/Desktop/Core/ListEventTypeData.aspx">
+			<item name="All" target="" activityName="Core/ListEventTypeData" id="10070" url="Pages/Desktop/Core/ListEventTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditEventType" id="10069" url="Pages/Desktop/Core/EditEventType.aspx"></item>
+		</item>
+		<item name="Severity Level" target="" activityName="Core/ListSeverityLevelData" id="1068" url="Pages/Desktop/Core/ListSeverityLevelData.aspx">
+			<item name="All" target="" activityName="Core/ListSeverityLevelData" id="10136" url="Pages/Desktop/Core/ListSeverityLevelData.aspx"></item>
+			<item name="Details" target="" activityName="Core/EditSeverityLevel" id="10135" url="Pages/Desktop/Core/EditSeverityLevel.aspx"></item>
+		</item>
+	</item>
+	<item name="Events" target="" activityName="Events" id="115" url="Pages/Desktop/Events/SearchEventData.aspx">
+		<item name="Audit Attribute Value Log" target="" activityName="Events/SearchAuditAttributeValueLogData" id="1009" url="Pages/Desktop/Events/SearchAuditAttributeValueLogData.aspx">
+			<item name="Search" target="" activityName="Events/SearchAuditAttributeValueLogData" id="10018" url="Pages/Desktop/Events/SearchAuditAttributeValueLogData.aspx"></item>
+			<item name="Details" target="" activityName="Events/EditAuditAttributeValueLog" id="10017" url="Pages/Desktop/Events/EditAuditAttributeValueLog.aspx"></item>
+		</item>
+		<item name="Audit Log" target="" activityName="Events/SearchAuditLogData" id="1010" url="Pages/Desktop/Events/SearchAuditLogData.aspx">
+			<item name="Search" target="" activityName="Events/SearchAuditLogData" id="10020" url="Pages/Desktop/Events/SearchAuditLogData.aspx"></item>
+			<item name="Details" target="" activityName="Events/EditAuditLog" id="10019" url="Pages/Desktop/Events/EditAuditLog.aspx"></item>
+		</item>
+		<item name="Event" target="" activityName="Events/SearchEventData" id="1033" url="Pages/Desktop/Events/SearchEventData.aspx">
+			<item name="Search" target="" activityName="Events/SearchEventData" id="10066" url="Pages/Desktop/Events/SearchEventData.aspx"></item>
+			<item name="Details" target="" activityName="Events/EditEvent" id="10065" url="Pages/Desktop/Events/EditEvent.aspx"></item>
+		</item>
+		<item name="Event Attribute" target="" activityName="Events/SearchEventAttributeData" id="1034" url="Pages/Desktop/Events/SearchEventAttributeData.aspx">
+			<item name="Search" target="" activityName="Events/SearchEventAttributeData" id="10068" url="Pages/Desktop/Events/SearchEventAttributeData.aspx"></item>
+			<item name="Details" target="" activityName="Events/EditEventAttribute" id="10067" url="Pages/Desktop/Events/EditEventAttribute.aspx"></item>
+		</item>
+		<item name="Event Type" target="" activityName="Events/ListEventTypeData" id="1036" url="Pages/Desktop/Events/ListEventTypeData.aspx">
+			<item name="All" target="" activityName="Events/ListEventTypeData" id="10072" url="Pages/Desktop/Events/ListEventTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Events/EditEventType" id="10071" url="Pages/Desktop/Events/EditEventType.aspx"></item>
+		</item>
+	</item>
+	<item name="Customers" target="" activityName="Customers" id="123" url="Pages/Desktop/Customers/SearchMetaPartnerPhoneData.aspx">
+		<item name="Bank" target="" activityName="Customers/SearchBankData" id="1011" url="Pages/Desktop/Customers/SearchBankData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchBankData" id="10022" url="Pages/Desktop/Customers/SearchBankData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditBank" id="10021" url="Pages/Desktop/Customers/EditBank.aspx"></item>
+		</item>
+		<item name="Business" target="" activityName="Customers/SearchBusinessData" id="1015" url="Pages/Desktop/Customers/SearchBusinessData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchBusinessData" id="10030" url="Pages/Desktop/Customers/SearchBusinessData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditBusiness" id="10029" url="Pages/Desktop/Customers/EditBusiness.aspx"></item>
+		</item>
+		<item name="Carrier" target="" activityName="Customers/SearchCarrierData" id="1016" url="Pages/Desktop/Customers/SearchCarrierData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchCarrierData" id="10032" url="Pages/Desktop/Customers/SearchCarrierData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditCarrier" id="10031" url="Pages/Desktop/Customers/EditCarrier.aspx"></item>
+		</item>
+		<item name="Customer" target="" activityName="Customers/SearchCustomerData" id="1024" url="Pages/Desktop/Customers/SearchCustomerData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchCustomerData" id="10048" url="Pages/Desktop/Customers/SearchCustomerData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditCustomer" id="10047" url="Pages/Desktop/Customers/EditCustomer.aspx"></item>
+		</item>
+		<item name="Location" target="" activityName="Customers/SearchLocationData" id="1045" url="Pages/Desktop/Customers/SearchLocationData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchLocationData" id="10089" url="Pages/Desktop/Customers/SearchLocationData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditLocation" id="10090" url="Pages/Desktop/Customers/EditLocation.aspx"></item>
+		</item>
+		<item name="Location Type" target="" activityName="Customers/ListLocationTypeData" id="1046" url="Pages/Desktop/Customers/ListLocationTypeData.aspx">
+			<item name="All" target="" activityName="Customers/ListLocationTypeData" id="10092" url="Pages/Desktop/Customers/ListLocationTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditLocationType" id="10091" url="Pages/Desktop/Customers/EditLocationType.aspx"></item>
+		</item>
+		<item name="Merchant" target="" activityName="Customers/SearchMerchantData" id="1047" url="Pages/Desktop/Customers/SearchMerchantData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchMerchantData" id="10094" url="Pages/Desktop/Customers/SearchMerchantData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditMerchant" id="10093" url="Pages/Desktop/Customers/EditMerchant.aspx"></item>
+		</item>
+		<item name="Meta Partner" target="" activityName="Customers/SearchMetaPartnerData" id="1048" url="Pages/Desktop/Customers/SearchMetaPartnerData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchMetaPartnerData" id="10096" url="Pages/Desktop/Customers/SearchMetaPartnerData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditMetaPartner" id="10095" url="Pages/Desktop/Customers/EditMetaPartner.aspx"></item>
+		</item>
+		<item name="Meta Partner Email" target="" activityName="Customers/SearchMetaPartnerEmailData" id="1050" url="Pages/Desktop/Customers/SearchMetaPartnerEmailData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchMetaPartnerEmailData" id="10100" url="Pages/Desktop/Customers/SearchMetaPartnerEmailData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditMetaPartnerEmail" id="10099" url="Pages/Desktop/Customers/EditMetaPartnerEmail.aspx"></item>
+		</item>
+		<item name="Meta Partner Phone" target="" activityName="Customers/SearchMetaPartnerPhoneData" id="1051" url="Pages/Desktop/Customers/SearchMetaPartnerPhoneData.aspx">
+			<item name="Search" target="" activityName="Customers/SearchMetaPartnerPhoneData" id="10102" url="Pages/Desktop/Customers/SearchMetaPartnerPhoneData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditMetaPartnerPhone" id="10101" url="Pages/Desktop/Customers/EditMetaPartnerPhone.aspx"></item>
+		</item>
+		<item name="Meta Partner Sub Type" target="" activityName="Customers/ListMetaPartnerSubTypeData" id="1052" url="Pages/Desktop/Customers/ListMetaPartnerSubTypeData.aspx">
+			<item name="All" target="" activityName="Customers/ListMetaPartnerSubTypeData" id="10104" url="Pages/Desktop/Customers/ListMetaPartnerSubTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Customers/EditMetaPartnerSubType" id="10103" url="Pages/Desktop/Customers/EditMetaPartnerSubType.aspx"></item>
+		</item>
+	</item>
+	<item name="Environments" target="" activityName="Environments" id="111" url="Pages/Desktop/Environments/EditCountry.aspx">
+		<item name="Country" target="" activityName="Environments/ListCountryData" id="1017" url="Pages/Desktop/Environments/ListCountryData.aspx">
+			<item name="All" target="" activityName="Environments/ListCountryData" id="10034" url="Pages/Desktop/Environments/ListCountryData.aspx"></item>
+			<item name="Details" target="" activityName="Environments/EditCountry" id="10033" url="Pages/Desktop/Environments/EditCountry.aspx"></item>
+		</item>
+		<item name="Date Format" target="" activityName="Environments/ListDateFormatData" id="1026" url="Pages/Desktop/Environments/ListDateFormatData.aspx">
+			<item name="All" target="" activityName="Environments/ListDateFormatData" id="10052" url="Pages/Desktop/Environments/ListDateFormatData.aspx"></item>
+			<item name="Details" target="" activityName="Environments/EditDateFormat" id="10051" url="Pages/Desktop/Environments/EditDateFormat.aspx"></item>
+		</item>
+		<item name="Locale" target="" activityName="Environments/ListLocaleData" id="1044" url="Pages/Desktop/Environments/ListLocaleData.aspx">
+			<item name="All" target="" activityName="Environments/ListLocaleData" id="10088" url="Pages/Desktop/Environments/ListLocaleData.aspx"></item>
+			<item name="Details" target="" activityName="Environments/EditLocale" id="10087" url="Pages/Desktop/Environments/EditLocale.aspx"></item>
+		</item>
+	</item>
+	<item name="Promotions" target="" activityName="Promotions" id="130" url="Pages/Desktop/Promotions/SearchPromotionData.aspx">
+		<item name="Coupon" target="" activityName="Promotions/SearchCouponData" id="1018" url="Pages/Desktop/Promotions/SearchCouponData.aspx">
+			<item name="Search" target="" activityName="Promotions/SearchCouponData" id="10036" url="Pages/Desktop/Promotions/SearchCouponData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditCoupon" id="10035" url="Pages/Desktop/Promotions/EditCoupon.aspx"></item>
+		</item>
+		<item name="Coupon Type" target="" activityName="Promotions/ListCouponTypeData" id="1019" url="Pages/Desktop/Promotions/ListCouponTypeData.aspx">
+			<item name="All" target="" activityName="Promotions/ListCouponTypeData" id="10038" url="Pages/Desktop/Promotions/ListCouponTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditCouponType" id="10037" url="Pages/Desktop/Promotions/EditCouponType.aspx"></item>
+		</item>
+		<item name="Discount Type" target="" activityName="Promotions/ListDiscountTypeData" id="1031" url="Pages/Desktop/Promotions/ListDiscountTypeData.aspx">
+			<item name="All" target="" activityName="Promotions/ListDiscountTypeData" id="10062" url="Pages/Desktop/Promotions/ListDiscountTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditDiscountType" id="10061" url="Pages/Desktop/Promotions/EditDiscountType.aspx"></item>
+		</item>
+		<item name="Meta Partner Coupon" target="" activityName="Promotions/SearchMetaPartnerCouponData" id="1049" url="Pages/Desktop/Promotions/SearchMetaPartnerCouponData.aspx">
+			<item name="Search" target="" activityName="Promotions/SearchMetaPartnerCouponData" id="10098" url="Pages/Desktop/Promotions/SearchMetaPartnerCouponData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditMetaPartnerCoupon" id="10097" url="Pages/Desktop/Promotions/EditMetaPartnerCoupon.aspx"></item>
+		</item>
+		<item name="Promotion" target="" activityName="Promotions/SearchPromotionData" id="1066" url="Pages/Desktop/Promotions/SearchPromotionData.aspx">
+			<item name="Search" target="" activityName="Promotions/SearchPromotionData" id="10132" url="Pages/Desktop/Promotions/SearchPromotionData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditPromotion" id="10131" url="Pages/Desktop/Promotions/EditPromotion.aspx"></item>
+		</item>
+		<item name="Promotion Type" target="" activityName="Promotions/ListPromotionTypeData" id="1067" url="Pages/Desktop/Promotions/ListPromotionTypeData.aspx">
+			<item name="All" target="" activityName="Promotions/ListPromotionTypeData" id="10134" url="Pages/Desktop/Promotions/ListPromotionTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Promotions/EditPromotionType" id="10133" url="Pages/Desktop/Promotions/EditPromotionType.aspx"></item>
+		</item>
+	</item>
+	<item name="Payments" target="" activityName="Payments" id="129" url="Pages/Desktop/Payments/SearchPaymentData.aspx">
+		<item name="Fee" target="" activityName="Payments/SearchFeeData" id="1037" url="Pages/Desktop/Payments/SearchFeeData.aspx">
+			<item name="Search" target="" activityName="Payments/SearchFeeData" id="10074" url="Pages/Desktop/Payments/SearchFeeData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditFee" id="10073" url="Pages/Desktop/Payments/EditFee.aspx"></item>
+		</item>
+		<item name="Fee Type" target="" activityName="Payments/ListFeeTypeData" id="1038" url="Pages/Desktop/Payments/ListFeeTypeData.aspx">
+			<item name="All" target="" activityName="Payments/ListFeeTypeData" id="10076" url="Pages/Desktop/Payments/ListFeeTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditFeeType" id="10075" url="Pages/Desktop/Payments/EditFeeType.aspx"></item>
+		</item>
+		<item name="Payment" target="" activityName="Payments/SearchPaymentData" id="1061" url="Pages/Desktop/Payments/SearchPaymentData.aspx">
+			<item name="Search" target="" activityName="Payments/SearchPaymentData" id="10122" url="Pages/Desktop/Payments/SearchPaymentData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditPayment" id="10121" url="Pages/Desktop/Payments/EditPayment.aspx"></item>
+		</item>
+		<item name="Payment Status" target="" activityName="Payments/ListPaymentStatusData" id="1063" url="Pages/Desktop/Payments/ListPaymentStatusData.aspx">
+			<item name="All" target="" activityName="Payments/ListPaymentStatusData" id="10126" url="Pages/Desktop/Payments/ListPaymentStatusData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditPaymentStatus" id="10125" url="Pages/Desktop/Payments/EditPaymentStatus.aspx"></item>
+		</item>
+		<item name="Payment Transaction Attribute Value Log" target="" activityName="Payments/SearchPaymentTransactionAttributeValueLogData" id="1064" url="Pages/Desktop/Payments/SearchPaymentTransactionAttributeValueLogData.aspx">
+			<item name="Search" target="" activityName="Payments/SearchPaymentTransactionAttributeValueLogData" id="10128" url="Pages/Desktop/Payments/SearchPaymentTransactionAttributeValueLogData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditPaymentTransactionAttributeValueLog" id="10127" url="Pages/Desktop/Payments/EditPaymentTransactionAttributeValueLog.aspx"></item>
+		</item>
+		<item name="Payment Transaction Log" target="" activityName="Payments/SearchPaymentTransactionLogData" id="1065" url="Pages/Desktop/Payments/SearchPaymentTransactionLogData.aspx">
+			<item name="Search" target="" activityName="Payments/SearchPaymentTransactionLogData" id="10130" url="Pages/Desktop/Payments/SearchPaymentTransactionLogData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditPaymentTransactionLog" id="10129" url="Pages/Desktop/Payments/EditPaymentTransactionLog.aspx"></item>
+		</item>
+		<item name="Transaction Status" target="" activityName="Payments/ListTransactionStatusData" id="1075" url="Pages/Desktop/Payments/ListTransactionStatusData.aspx">
+			<item name="All" target="" activityName="Payments/ListTransactionStatusData" id="10150" url="Pages/Desktop/Payments/ListTransactionStatusData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditTransactionStatus" id="10149" url="Pages/Desktop/Payments/EditTransactionStatus.aspx"></item>
+		</item>
+		<item name="Transaction Type" target="" activityName="Payments/ListTransactionTypeData" id="1076" url="Pages/Desktop/Payments/ListTransactionTypeData.aspx">
+			<item name="All" target="" activityName="Payments/ListTransactionTypeData" id="10152" url="Pages/Desktop/Payments/ListTransactionTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Payments/EditTransactionType" id="10151" url="Pages/Desktop/Payments/EditTransactionType.aspx"></item>
+		</item>
+	</item>
+	<item name="Notifications" target="" activityName="Notifications" id="126" url="Pages/Desktop/Notifications/SearchNotificationTemplateData.aspx">
+		<item name="Notification" target="" activityName="Notifications/SearchNotificationData" id="1054" url="Pages/Desktop/Notifications/SearchNotificationData.aspx">
+			<item name="Search" target="" activityName="Notifications/SearchNotificationData" id="10108" url="Pages/Desktop/Notifications/SearchNotificationData.aspx"></item>
+			<item name="Details" target="" activityName="Notifications/EditNotification" id="10107" url="Pages/Desktop/Notifications/EditNotification.aspx"></item>
+		</item>
+		<item name="Notification Attribute Value Log" target="" activityName="Notifications/SearchNotificationAttributeValueLogData" id="1055" url="Pages/Desktop/Notifications/SearchNotificationAttributeValueLogData.aspx">
+			<item name="Search" target="" activityName="Notifications/SearchNotificationAttributeValueLogData" id="10110" url="Pages/Desktop/Notifications/SearchNotificationAttributeValueLogData.aspx"></item>
+			<item name="Details" target="" activityName="Notifications/EditNotificationAttributeValueLog" id="10109" url="Pages/Desktop/Notifications/EditNotificationAttributeValueLog.aspx"></item>
+		</item>
+		<item name="Notification Delivery Type" target="" activityName="Notifications/ListNotificationDeliveryTypeData" id="1056" url="Pages/Desktop/Notifications/ListNotificationDeliveryTypeData.aspx">
+			<item name="All" target="" activityName="Notifications/ListNotificationDeliveryTypeData" id="10112" url="Pages/Desktop/Notifications/ListNotificationDeliveryTypeData.aspx"></item>
+			<item name="Details" target="" activityName="Notifications/EditNotificationDeliveryType" id="10111" url="Pages/Desktop/Notifications/EditNotificationDeliveryType.aspx"></item>
+		</item>
+		<item name="Notification Log" target="" activityName="Notifications/SearchNotificationLogData" id="1057" url="Pages/Desktop/Notifications/SearchNotificationLogData.aspx">
+			<item name="Search" target="" activityName="Notifications/SearchNotificationLogData" id="10114" url="Pages/Desktop/Notifications/SearchNotificationLogData.aspx"></item>
+			<item name="Details" target="" activityName="Notifications/EditNotificationLog" id="10113" url="Pages/Desktop/Notifications/EditNotificationLog.aspx"></item>
+		</item>
+		<item name="Notification Template" target="" activityName="Notifications/SearchNotificationTemplateData" id="1058" url="Pages/Desktop/Notifications/SearchNotificationTemplateData.aspx">
+			<item name="Search" target="" activityName="Notifications/SearchNotificationTemplateData" id="10116" url="Pages/Desktop/Notifications/SearchNotificationTemplateData.aspx"></item>
+			<item name="Details" target="" activityName="Notifications/EditNotificationTemplate" id="10115" url="Pages/Desktop/Notifications/EditNotificationTemplate.aspx"></item>
+		</item>
+	</item>
+	<item name="Orders" target="" activityName="Orders" id="128" url="Pages/Desktop/Orders/SearchOrderData.aspx">
+		<item name="Order" target="" activityName="Orders/SearchOrderData" id="1059" url="Pages/Desktop/Orders/SearchOrderData.aspx">
+			<item name="Search" target="" activityName="Orders/SearchOrderData" id="10118" url="Pages/Desktop/Orders/SearchOrderData.aspx"></item>
+			<item name="Details" target="" activityName="Orders/EditOrder" id="10117" url="Pages/Desktop/Orders/EditOrder.aspx"></item>
+		</item>
+		<item name="Order Status" target="" activityName="Orders/ListOrderStatusData" id="1060" url="Pages/Desktop/Orders/ListOrderStatusData.aspx">
+			<item name="All" target="" activityName="Orders/ListOrderStatusData" id="10120" url="Pages/Desktop/Orders/ListOrderStatusData.aspx"></item>
+			<item name="Details" target="" activityName="Orders/EditOrderStatus" id="10119" url="Pages/Desktop/Orders/EditOrderStatus.aspx"></item>
+		</item>
+	</item>
+</xml>

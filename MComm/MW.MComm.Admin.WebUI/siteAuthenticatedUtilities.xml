@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xml>
+	<item name="Testing" target="" activityName="Testing" id="1" url="Pages/Desktop/Testing/Default.aspx">
+		<item name="Pay Phone To Phone" target="" activityName="PayPhoneToPhone" id="2" url="Pages/Desktop/Testing/PayPhoneToPhone.aspx"></item>
+		<item name="Phone Operations" target="" activityName="PhoneBalance" id="2" url="Pages/Desktop/Testing/PhoneBalance.aspx"></item>
+	</item>
+</xml>

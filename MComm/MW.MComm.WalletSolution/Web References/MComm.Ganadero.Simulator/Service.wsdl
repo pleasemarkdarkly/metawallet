@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.bg.com.bo/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.bg.com.bo/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.bg.com.bo/">
+      <s:element name="CustomerInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuditId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerInformationResult" type="tns:CustomerInformationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerInformationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegisteredBillerCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuditId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccountInformationResult" type="tns:AccountInformationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountInformationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountDailyLimit" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountInformation2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuditId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountInformation2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccountInformation2Result" type="tns:AccountInformationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrencyConversionCalculation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OriginalCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrencyConversionCalculationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CurrencyConversionCalculationResult" type="tns:CurrencyConversionCalculationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CurrencyConversionCalculationResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SignificativeDigits" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DestinationAmmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuditId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginAccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationAccountCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ammount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccountTransferResult" type="tns:AccountTransferResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountTransferResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ITFOriginAccount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ITFDestinationAccount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerInformationResult" type="tns:CustomerInformationResult" />
+      <s:element name="AccountInformationResult" type="tns:AccountInformationResult" />
+      <s:element name="CurrencyConversionCalculationResult" type="tns:CurrencyConversionCalculationResult" />
+      <s:element name="AccountTransferResult" type="tns:AccountTransferResult" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInformation" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountInformation" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2SoapIn">
+    <wsdl:part name="parameters" element="tns:AccountInformation2" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2SoapOut">
+    <wsdl:part name="parameters" element="tns:AccountInformation2Response" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationSoapIn">
+    <wsdl:part name="parameters" element="tns:CurrencyConversionCalculation" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationSoapOut">
+    <wsdl:part name="parameters" element="tns:CurrencyConversionCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountTransfer" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationHttpGetIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationHttpGetIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2HttpGetIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="AccountCod" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2HttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationHttpGetIn">
+    <wsdl:part name="OriginalCurrency" type="s:string" />
+    <wsdl:part name="DestinationCurrency" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CustomerCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationHttpGetOut">
+    <wsdl:part name="Body" element="tns:CurrencyConversionCalculationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferHttpGetIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="OriginAccountCode" type="s:string" />
+    <wsdl:part name="DestinationAccountCode" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+    <wsdl:part name="TransactionCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountTransferResult" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationHttpPostIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationHttpPostIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2HttpPostIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="AccountCod" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountInformation2HttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountInformationResult" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationHttpPostIn">
+    <wsdl:part name="OriginalCurrency" type="s:string" />
+    <wsdl:part name="DestinationCurrency" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CustomerCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyConversionCalculationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CurrencyConversionCalculationResult" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferHttpPostIn">
+    <wsdl:part name="CustomerCode" type="s:string" />
+    <wsdl:part name="CustomerPin" type="s:string" />
+    <wsdl:part name="AuditId" type="s:string" />
+    <wsdl:part name="OriginAccountCode" type="s:string" />
+    <wsdl:part name="DestinationAccountCode" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+    <wsdl:part name="TransactionCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AccountTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountTransferResult" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="CustomerInformation">
+      <wsdl:input message="tns:CustomerInformationSoapIn" />
+      <wsdl:output message="tns:CustomerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <wsdl:input message="tns:AccountInformationSoapIn" />
+      <wsdl:output message="tns:AccountInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <wsdl:input message="tns:AccountInformation2SoapIn" />
+      <wsdl:output message="tns:AccountInformation2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <wsdl:input message="tns:CurrencyConversionCalculationSoapIn" />
+      <wsdl:output message="tns:CurrencyConversionCalculationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <wsdl:input message="tns:AccountTransferSoapIn" />
+      <wsdl:output message="tns:AccountTransferSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="CustomerInformation">
+      <wsdl:input message="tns:CustomerInformationHttpGetIn" />
+      <wsdl:output message="tns:CustomerInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <wsdl:input message="tns:AccountInformationHttpGetIn" />
+      <wsdl:output message="tns:AccountInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <wsdl:input message="tns:AccountInformation2HttpGetIn" />
+      <wsdl:output message="tns:AccountInformation2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <wsdl:input message="tns:CurrencyConversionCalculationHttpGetIn" />
+      <wsdl:output message="tns:CurrencyConversionCalculationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <wsdl:input message="tns:AccountTransferHttpGetIn" />
+      <wsdl:output message="tns:AccountTransferHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="CustomerInformation">
+      <wsdl:input message="tns:CustomerInformationHttpPostIn" />
+      <wsdl:output message="tns:CustomerInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <wsdl:input message="tns:AccountInformationHttpPostIn" />
+      <wsdl:output message="tns:AccountInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <wsdl:input message="tns:AccountInformation2HttpPostIn" />
+      <wsdl:output message="tns:AccountInformation2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <wsdl:input message="tns:CurrencyConversionCalculationHttpPostIn" />
+      <wsdl:output message="tns:CurrencyConversionCalculationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <wsdl:input message="tns:AccountTransferHttpPostIn" />
+      <wsdl:output message="tns:AccountTransferHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerInformation">
+      <soap:operation soapAction="http://www.bg.com.bo/CustomerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <soap:operation soapAction="http://www.bg.com.bo/AccountInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <soap:operation soapAction="http://www.bg.com.bo/AccountInformation2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <soap:operation soapAction="http://www.bg.com.bo/CurrencyConversionCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <soap:operation soapAction="http://www.bg.com.bo/AccountTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerInformation">
+      <soap12:operation soapAction="http://www.bg.com.bo/CustomerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <soap12:operation soapAction="http://www.bg.com.bo/AccountInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <soap12:operation soapAction="http://www.bg.com.bo/AccountInformation2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <soap12:operation soapAction="http://www.bg.com.bo/CurrencyConversionCalculation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <soap12:operation soapAction="http://www.bg.com.bo/AccountTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CustomerInformation">
+      <http:operation location="/CustomerInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <http:operation location="/AccountInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <http:operation location="/AccountInformation2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <http:operation location="/CurrencyConversionCalculation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <http:operation location="/AccountTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CustomerInformation">
+      <http:operation location="/CustomerInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation">
+      <http:operation location="/AccountInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountInformation2">
+      <http:operation location="/AccountInformation2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyConversionCalculation">
+      <http:operation location="/CurrencyConversionCalculation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountTransfer">
+      <http:operation location="/AccountTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

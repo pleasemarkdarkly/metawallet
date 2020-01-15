@@ -1,0 +1,59 @@
+﻿/*--------Login screen------------*/
+#LoginContent .Header
+{
+    background-color:#000000;
+    font-size:11pt;
+    font-weight:bold;
+    color: #ffffff;
+    padding:5px 5px 5px 5px;
+}
+#LoginContent .Login
+{
+    width:370px;
+    height:auto;
+}
+#LoginContent .Fields
+{
+    width:345px;
+    padding-left:25px;
+    background-color:#d9d9d9;
+}
+
+#LoginContent
+{
+    margin-top:100px;
+    margin-left:300px;
+    width:370px;
+}
+#LoginContent .PageTitle
+{
+    color:#FA8511;
+    font-size: 14pt;
+    font-weight:bold;
+    border-bottom:none;
+}
+
+#LoginContent .Login .BorderTop
+{
+    background-color:#d9d9d9;
+    height:6px;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    vertical-align:top;
+}
+#LoginContent .Login .BorderBottom
+{
+    bottom: -1px;
+    background-color:#d9d9d9;
+    height:6px;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    vertical-align:bottom;
+}
+
+.EULA
+{
+	width:	500px;
+    padding: 10px 10px 10px 10px;
+    background-color:#d9d9d9;
+}

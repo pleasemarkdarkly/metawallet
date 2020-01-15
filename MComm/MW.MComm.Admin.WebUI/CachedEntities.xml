@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+This list determines what what class objects will be cached in the BLL layer.
+All cached entities should be treated as read-only by the application.
+For other cache settings, see web.config or app.config.
+-->
+<Entities>
+    <Entity FullName="MW.MComm.WalletSolution.BLL.Accounts.AccountSubType"/>
+    <Entity FullName="MW.MComm.WalletSolution.BLL.Accounts.Currency"/>
+    <Entity FullName="MW.MComm.WalletSolution.BLL.Accounts.Account"/>
+</Entities>

@@ -1,0 +1,52 @@
+<%@ Master Language="C#" EnableViewState="false" AutoEventWireup="true" CodeFile="HomePage.master.cs" Inherits="Templates_Desktop_HomePage" %>
+<%@ Register TagPrefix="Wilson" Namespace="Wilson.MasterPages" Assembly="WilsonMasterPages" %>
+<%@ Register TagPrefix="MOD" TagName="PrimaryNav" SRC="~/UserControls/Desktop/navigation/PrimaryNav.ascx" %>
+<%@ Register TagPrefix="MOD" TagName="Footer" SRC="~/UserControls/Desktop/Utility/Footer.ascx" %>
+<%@ Register TagPrefix="MODC" Namespace="MW.MComm.Phone.WebUI.Controls" %>
+<!--?xml version="1.0"encoding "iso-8859-1"?-->
+<satml>
+    <head id="Head1" runat="server">
+        <script src="/MW.MComm.Phone.WebUI/scripts/corp.js" type="text/javascript" language="javascript"></script>
+        <title>
+            <asp:ContentPlaceHolder id="cphTitle" runat="server"></asp:ContentPlaceHolder>
+        </title>
+    </head>
+    <card onload="javascript:body_onload(); SizeForm();" onresize="SizeForm();">
+	    <form enableviewstate=false runat="server" id="Form1">
+	        <table>
+	            <tr id="Header">
+	                <td>
+                    <asp:contentplaceholder id="cphHeader1" runat="server">
+                        <asp:HyperLink Runat="server" NavigateUrl="~/Default.aspx" ID="HyperLink1">
+                            <asp:Image ID="Image1" Runat="server" ImageUrl="~/images/mw_logo-phone.gif"></asp:Image>
+                        </asp:HyperLink>
+                    </asp:contentplaceholder>
+                    </td>
+	            </tr>
+	            <tr id="Container">
+	                <td>
+	                    <table>
+	                        <tr>
+	                            <td valign=top>
+                                    <asp:ContentPlaceHolder ID="cphPrimaryNav" runat="server">
+				                        <MOD:PrimaryNav id="PrimaryNav1" runat="server"></MOD:PrimaryNav>
+		                            </asp:ContentPlaceHolder>
+		                        </td>
+	                            <td valign=top>
+	                                <asp:contentplaceholder id="cphContent" runat="server"></asp:contentplaceholder>
+	                            </td>
+	                        </tr>
+	                    </table>
+                    </td>
+	            </tr>
+	            <tr id="Footer">
+	                <td>
+                        <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+                            <MOD:Footer id="Footer1" runat="server"></MOD:Footer>
+                        </asp:ContentPlaceHolder>
+                    </td>
+	            </tr>
+	        </table>
+	    </form>
+    </card>
+</satml>

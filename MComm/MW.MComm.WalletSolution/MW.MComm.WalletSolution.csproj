@@ -1,0 +1,1035 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25276056-1F16-44DD-BAD5-45C6A3907D1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MW.MComm.WalletSolution</RootNamespace>
+    <AssemblyName>MW.MComm.WalletSolution</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="MOD.Data, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\common\MOD.Data\bin\Debug\MOD.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MOD.Exceptions %28VS2005%29, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\common\MOD.Exceptions\bin\Debug\MOD.Exceptions (VS2005).dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\Accounts\Account.cs" />
+    <Compile Include="BLL\Accounts\AccountAttribute.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeManager.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeValue.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeValueManager.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeValueManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountAttributeValue_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountAttribute_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountManager.cs" />
+    <Compile Include="BLL\Accounts\AccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountSubType.cs" />
+    <Compile Include="BLL\Accounts\AccountSubTypeCode.cs" />
+    <Compile Include="BLL\Accounts\AccountSubTypeManager.cs" />
+    <Compile Include="BLL\Accounts\AccountSubTypeManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\AccountSubType_Ext.cs" />
+    <Compile Include="BLL\Accounts\Account_Ext.cs" />
+    <Compile Include="BLL\Accounts\BankAccount.cs" />
+    <Compile Include="BLL\Accounts\BankAccountManager.cs" />
+    <Compile Include="BLL\Accounts\BankAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\BankAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\BillPayAccount.cs" />
+    <Compile Include="BLL\Accounts\BillPayAccountManager.cs" />
+    <Compile Include="BLL\Accounts\BillPayAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\BillPayAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\CreditAccount.cs" />
+    <Compile Include="BLL\Accounts\CreditAccountManager.cs" />
+    <Compile Include="BLL\Accounts\CreditAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\CreditAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\CreditCardType.cs" />
+    <Compile Include="BLL\Accounts\CreditCardTypeCode.cs" />
+    <Compile Include="BLL\Accounts\CreditCardTypeManager.cs" />
+    <Compile Include="BLL\Accounts\CreditCardTypeManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\CreditCardType_Ext.cs" />
+    <Compile Include="BLL\Accounts\Currency.cs" />
+    <Compile Include="BLL\Accounts\CurrencyCode.cs" />
+    <Compile Include="BLL\Accounts\CurrencyConversion.cs" />
+    <Compile Include="BLL\Accounts\CurrencyConversionManager.cs" />
+    <Compile Include="BLL\Accounts\CurrencyConversionManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\CurrencyConversion_Ext.cs" />
+    <Compile Include="BLL\Accounts\CurrencyManager.cs" />
+    <Compile Include="BLL\Accounts\CurrencyManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\Currency_Ext.cs" />
+    <Compile Include="BLL\Accounts\DebitAccount.cs" />
+    <Compile Include="BLL\Accounts\DebitAccountManager.cs" />
+    <Compile Include="BLL\Accounts\DebitAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\DebitAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\ExternalAccount.cs" />
+    <Compile Include="BLL\Accounts\ExternalAccountManager.cs" />
+    <Compile Include="BLL\Accounts\ExternalAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\ExternalAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\Frequency.cs" />
+    <Compile Include="BLL\Accounts\FrequencyCode.cs" />
+    <Compile Include="BLL\Accounts\FrequencyManager.cs" />
+    <Compile Include="BLL\Accounts\FrequencyManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\Frequency_Ext.cs" />
+    <Compile Include="BLL\Accounts\FundAccount.cs" />
+    <Compile Include="BLL\Accounts\FundAccountManager.cs" />
+    <Compile Include="BLL\Accounts\FundAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\FundAccountType.cs" />
+    <Compile Include="BLL\Accounts\FundAccountTypeCode.cs" />
+    <Compile Include="BLL\Accounts\FundAccountTypeManager.cs" />
+    <Compile Include="BLL\Accounts\FundAccountTypeManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\FundAccountType_Ext.cs" />
+    <Compile Include="BLL\Accounts\FundAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\LoanAccount.cs" />
+    <Compile Include="BLL\Accounts\LoanAccountManager.cs" />
+    <Compile Include="BLL\Accounts\LoanAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\LoanAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\LoanToMetaPartner.cs" />
+    <Compile Include="BLL\Accounts\LoanToMetaPartnerManager.cs" />
+    <Compile Include="BLL\Accounts\LoanToMetaPartnerManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\LoanToMetaPartner_Ext.cs" />
+    <Compile Include="BLL\Accounts\MetaTransferAccount.cs" />
+    <Compile Include="BLL\Accounts\MetaTransferAccountManager.cs" />
+    <Compile Include="BLL\Accounts\MetaTransferAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\MetaTransferAccount_Ext.cs" />
+    <Compile Include="BLL\Accounts\ParticipatingPartner.cs" />
+    <Compile Include="BLL\Accounts\ParticipatingPartnerManager.cs" />
+    <Compile Include="BLL\Accounts\ParticipatingPartnerManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\ParticipatingPartner_Ext.cs" />
+    <Compile Include="BLL\Accounts\PaymentInstitution.cs" />
+    <Compile Include="BLL\Accounts\PaymentInstitutionCode.cs" />
+    <Compile Include="BLL\Accounts\PaymentInstitutionManager.cs" />
+    <Compile Include="BLL\Accounts\PaymentInstitutionManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\PaymentInstitution_Ext.cs" />
+    <Compile Include="BLL\Accounts\StoredValueAccount.cs" />
+    <Compile Include="BLL\Accounts\StoredValueAccountManager.cs" />
+    <Compile Include="BLL\Accounts\StoredValueAccountManager_Ext.cs" />
+    <Compile Include="BLL\Accounts\StoredValueAccount_Ext.cs" />
+    <Compile Include="BLL\ApplicationOptionsProvider.cs" />
+    <Compile Include="BLL\BusinessObject.cs" />
+    <Compile Include="BLL\BusinessObjectManager.cs" />
+    <Compile Include="BLL\Config\ConfigurationContext.cs" />
+    <Compile Include="BLL\Config\ConfigurationValue.cs" />
+    <Compile Include="BLL\Config\ConfigurationValueList.cs" />
+    <Compile Include="BLL\Config\IConfigurationValue.cs" />
+    <Compile Include="BLL\Config\MissingConfigurationValueException.cs" />
+    <Compile Include="BLL\Core\AttributeType.cs" />
+    <Compile Include="BLL\Core\AttributeTypeCode.cs" />
+    <Compile Include="BLL\Core\AttributeTypeManager.cs" />
+    <Compile Include="BLL\Core\AttributeTypeManager_Ext.cs" />
+    <Compile Include="BLL\Core\AttributeType_Ext.cs" />
+    <Compile Include="BLL\Core\BaseAttribute.cs" />
+    <Compile Include="BLL\Core\BaseAttributeManager.cs" />
+    <Compile Include="BLL\Core\BaseAttributeManager_Ext.cs" />
+    <Compile Include="BLL\Core\BaseAttribute_Ext.cs" />
+    <Compile Include="BLL\Core\DataType.cs" />
+    <Compile Include="BLL\Core\DataTypeCode.cs" />
+    <Compile Include="BLL\Core\DataTypeManager.cs" />
+    <Compile Include="BLL\Core\DataTypeManager_Ext.cs" />
+    <Compile Include="BLL\Core\DataType_Ext.cs" />
+    <Compile Include="BLL\Core\DebugAttribute.cs" />
+    <Compile Include="BLL\Core\DebugAttributeManager.cs" />
+    <Compile Include="BLL\Core\DebugAttributeManager_Ext.cs" />
+    <Compile Include="BLL\Core\DebugAttributeValueLog.cs" />
+    <Compile Include="BLL\Core\DebugAttributeValueLogManager.cs" />
+    <Compile Include="BLL\Core\DebugAttributeValueLogManager_Ext.cs" />
+    <Compile Include="BLL\Core\DebugAttributeValueLog_Ext.cs" />
+    <Compile Include="BLL\Core\DebugAttributeCode.cs" />
+    <Compile Include="BLL\Core\DebugAttribute_Ext.cs" />
+    <Compile Include="BLL\Core\DebugLog.cs" />
+    <Compile Include="BLL\Core\DebugLogManager.cs" />
+    <Compile Include="BLL\Core\DebugLogManager_Ext.cs" />
+    <Compile Include="BLL\Core\DebugLog_Ext.cs" />
+    <Compile Include="BLL\Core\Error.cs" />
+    <Compile Include="BLL\Core\ErrorManager.cs" />
+    <Compile Include="BLL\Core\ErrorManager_Ext.cs" />
+    <Compile Include="BLL\Core\ErrorNumber.cs" />
+    <Compile Include="BLL\Core\Error_Ext.cs" />
+    <Compile Include="BLL\Core\EventType.cs" />
+    <Compile Include="BLL\Core\EventTypeCode.cs" />
+    <Compile Include="BLL\Core\EventTypeManager.cs" />
+    <Compile Include="BLL\Core\EventTypeManager_Ext.cs" />
+    <Compile Include="BLL\Core\EventType_Ext.cs" />
+    <Compile Include="BLL\Core\SeverityLevel.cs" />
+    <Compile Include="BLL\Core\SeverityLevelCode.cs" />
+    <Compile Include="BLL\Core\SeverityLevelManager.cs" />
+    <Compile Include="BLL\Core\SeverityLevelManager_Ext.cs" />
+    <Compile Include="BLL\Core\SeverityLevel_Ext.cs" />
+    <Compile Include="BLL\Customers\Bank.cs" />
+    <Compile Include="BLL\Customers\BankCode.cs" />
+    <Compile Include="BLL\Customers\BankManager.cs" />
+    <Compile Include="BLL\Customers\BankManager_Ext.cs" />
+    <Compile Include="BLL\Customers\Bank_Ext.cs" />
+    <Compile Include="BLL\Customers\Business.cs" />
+    <Compile Include="BLL\Customers\BusinessCustomer.cs" />
+    <Compile Include="BLL\Customers\BusinessCustomerManager.cs" />
+    <Compile Include="BLL\Customers\BusinessCustomerManager_Ext.cs" />
+    <Compile Include="BLL\Customers\BusinessCustomer_Ext.cs" />
+    <Compile Include="BLL\Customers\BusinessManager.cs" />
+    <Compile Include="BLL\Customers\BusinessManager_Ext.cs" />
+    <Compile Include="BLL\Customers\Business_Ext.cs" />
+    <Compile Include="BLL\Customers\Carrier.cs" />
+    <Compile Include="BLL\Customers\CarrierCode.cs" />
+    <Compile Include="BLL\Customers\CarrierManager.cs" />
+    <Compile Include="BLL\Customers\CarrierManager_Ext.cs" />
+    <Compile Include="BLL\Customers\Carrier_Ext.cs" />
+    <Compile Include="BLL\Customers\Customer.cs" />
+    <Compile Include="BLL\Customers\CustomerManager.cs" />
+    <Compile Include="BLL\Customers\CustomerManager_Ext.cs" />
+    <Compile Include="BLL\Customers\Customer_Ext.cs" />
+    <Compile Include="BLL\Customers\Location.cs" />
+    <Compile Include="BLL\Customers\LocationManager.cs" />
+    <Compile Include="BLL\Customers\LocationManager_Ext.cs" />
+    <Compile Include="BLL\Customers\LocationType.cs" />
+    <Compile Include="BLL\Customers\LocationTypeCode.cs" />
+    <Compile Include="BLL\Customers\LocationTypeManager.cs" />
+    <Compile Include="BLL\Customers\LocationTypeManager_Ext.cs" />
+    <Compile Include="BLL\Customers\LocationType_Ext.cs" />
+    <Compile Include="BLL\Customers\Location_Ext.cs" />
+    <Compile Include="BLL\Customers\Merchant.cs" />
+    <Compile Include="BLL\Customers\MerchantManager.cs" />
+    <Compile Include="BLL\Customers\MerchantManager_Ext.cs" />
+    <Compile Include="BLL\Customers\Merchant_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartner.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerContact.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerContactManager.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerContactManager_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerContact_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerEmail.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerEmailManager.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerEmailManager_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerEmail_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerManager.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerManager_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerPhone.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerPhoneManager.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerPhoneManager_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerPhone_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerSubType.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerSubTypeCode.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerSubTypeManager.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerSubTypeManager_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartnerSubType_Ext.cs" />
+    <Compile Include="BLL\Customers\MetaPartner_Ext.cs" />
+    <Compile Include="BLL\Customers\Reseller.cs" />
+    <Compile Include="BLL\Customers\ResellerManager.cs" />
+    <Compile Include="BLL\Customers\ResellerManager_Ext.cs" />
+    <Compile Include="BLL\Customers\ResellerType.cs" />
+    <Compile Include="BLL\Customers\ResellerTypeCode.cs" />
+    <Compile Include="BLL\Customers\ResellerTypeManager.cs" />
+    <Compile Include="BLL\Customers\ResellerTypeManager_Ext.cs" />
+    <Compile Include="BLL\Customers\ResellerType_Ext.cs" />
+    <Compile Include="BLL\Customers\Reseller_Ext.cs" />
+    <Compile Include="BLL\Environments\Country.cs" />
+    <Compile Include="BLL\Environments\CountryCode.cs" />
+    <Compile Include="BLL\Environments\CountryManager.cs" />
+    <Compile Include="BLL\Environments\CountryManager_Ext.cs" />
+    <Compile Include="BLL\Environments\Country_Ext.cs" />
+    <Compile Include="BLL\Environments\DateFormat.cs" />
+    <Compile Include="BLL\Environments\DateFormatCode.cs" />
+    <Compile Include="BLL\Environments\DateFormatManager.cs" />
+    <Compile Include="BLL\Environments\DateFormatManager_Ext.cs" />
+    <Compile Include="BLL\Environments\DateFormat_Ext.cs" />
+    <Compile Include="BLL\Environments\Locale.cs" />
+    <Compile Include="BLL\Environments\LocaleCode.cs" />
+    <Compile Include="BLL\Environments\LocaleManager.cs" />
+    <Compile Include="BLL\Environments\LocaleManager_Ext.cs" />
+    <Compile Include="BLL\Environments\Locale_Ext.cs" />
+    <Compile Include="BLL\Events\AuditAttributeValueLog.cs" />
+    <Compile Include="BLL\Events\AuditAttributeValueLogManager.cs" />
+    <Compile Include="BLL\Events\AuditAttributeValueLogManager_Ext.cs" />
+    <Compile Include="BLL\Events\AuditAttributeValueLog_Ext.cs" />
+    <Compile Include="BLL\Events\AuditLog.cs" />
+    <Compile Include="BLL\Events\AuditLogManager.cs" />
+    <Compile Include="BLL\Events\AuditLogManager_Ext.cs" />
+    <Compile Include="BLL\Events\AuditLog_Ext.cs" />
+    <Compile Include="BLL\Events\EventAttributeCode.cs" />
+    <Compile Include="BLL\Events\Event.cs" />
+    <Compile Include="BLL\Events\EventAttribute.cs" />
+    <Compile Include="BLL\Events\EventAttributeManager.cs" />
+    <Compile Include="BLL\Events\EventAttributeManager_Ext.cs" />
+    <Compile Include="BLL\Events\EventAttribute_Ext.cs" />
+    <Compile Include="BLL\Events\EventCode.cs" />
+    <Compile Include="BLL\Events\EventFee.cs" />
+    <Compile Include="BLL\Events\EventFeeManager.cs" />
+    <Compile Include="BLL\Events\EventFeeManager_Ext.cs" />
+    <Compile Include="BLL\Events\EventFee_Ext.cs" />
+    <Compile Include="BLL\Events\EventManager.cs" />
+    <Compile Include="BLL\Events\EventManager_Ext.cs" />
+    <Compile Include="BLL\Events\EventPromotion.cs" />
+    <Compile Include="BLL\Events\EventPromotionManager.cs" />
+    <Compile Include="BLL\Events\EventPromotionManager_Ext.cs" />
+    <Compile Include="BLL\Events\EventPromotion_Ext.cs" />
+    <Compile Include="BLL\Events\EventType.cs" />
+    <Compile Include="BLL\Events\EventTypeCode.cs" />
+    <Compile Include="BLL\Events\EventTypeManager.cs" />
+    <Compile Include="BLL\Events\EventTypeManager_Ext.cs" />
+    <Compile Include="BLL\Events\EventType_Ext.cs" />
+    <Compile Include="BLL\Events\Event_Ext.cs" />
+    <Compile Include="BLL\Events\SpecificEventAttribute.cs" />
+    <Compile Include="BLL\Events\SpecificEventAttributeManager.cs" />
+    <Compile Include="BLL\Events\SpecificEventAttributeManager_Ext.cs" />
+    <Compile Include="BLL\Events\SpecificEventAttribute_Ext.cs" />
+    <Compile Include="BLL\Files\FileManager.cs" />
+    <Compile Include="BLL\GenericComparer.cs" />
+    <Compile Include="BLL\GenericTwoPropertyComparer.cs" />
+    <Compile Include="BLL\IBusinessObject.cs" />
+    <Compile Include="BLL\Notifications\Notification.cs" />
+    <Compile Include="BLL\Notifications\NotificationAttributeValueLog.cs" />
+    <Compile Include="BLL\Notifications\NotificationAttributeValueLogManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationAttributeValueLogManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationAttributeValueLog_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationCode.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryLog.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryLogManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryLogManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryLog_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryType.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryTypeCode.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryTypeManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryTypeManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationDeliveryType_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationGenerator.cs" />
+    <Compile Include="BLL\Notifications\NotificationLog.cs" />
+    <Compile Include="BLL\Notifications\NotificationLogManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationLogManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationLog_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationTemplate.cs" />
+    <Compile Include="BLL\Notifications\NotificationTemplateManager.cs" />
+    <Compile Include="BLL\Notifications\NotificationTemplateManager_Ext.cs" />
+    <Compile Include="BLL\Notifications\NotificationTemplate_Ext.cs" />
+    <Compile Include="BLL\Notifications\Notification_Ext.cs" />
+    <Compile Include="BLL\Orders\Order.cs" />
+    <Compile Include="BLL\Orders\OrderCoupon.cs" />
+    <Compile Include="BLL\Orders\OrderCouponManager.cs" />
+    <Compile Include="BLL\Orders\OrderCouponManager_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderCoupon_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderFee.cs" />
+    <Compile Include="BLL\Orders\OrderFeeManager.cs" />
+    <Compile Include="BLL\Orders\OrderFeeManager_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderFee_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderManager.cs" />
+    <Compile Include="BLL\Orders\OrderManager_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderStatus.cs" />
+    <Compile Include="BLL\Orders\OrderStatusCode.cs" />
+    <Compile Include="BLL\Orders\OrderStatusManager.cs" />
+    <Compile Include="BLL\Orders\OrderStatusManager_Ext.cs" />
+    <Compile Include="BLL\Orders\OrderStatus_Ext.cs" />
+    <Compile Include="BLL\Orders\Order_Ext.cs" />
+    <Compile Include="BLL\Payments\Fee.cs" />
+    <Compile Include="BLL\Payments\FeeCode.cs" />
+    <Compile Include="BLL\Payments\FeeManager.cs" />
+    <Compile Include="BLL\Payments\FeeManager_Ext.cs" />
+    <Compile Include="BLL\Payments\FeeType.cs" />
+    <Compile Include="BLL\Payments\FeeTypeCode.cs" />
+    <Compile Include="BLL\Payments\FeeTypeManager.cs" />
+    <Compile Include="BLL\Payments\FeeTypeManager_Ext.cs" />
+    <Compile Include="BLL\Payments\FeeType_Ext.cs" />
+    <Compile Include="BLL\Payments\Fee_Ext.cs" />
+    <Compile Include="BLL\Payments\Payment.cs" />
+    <Compile Include="BLL\Payments\PaymentManager.cs" />
+    <Compile Include="BLL\Payments\PaymentManager_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentStatus.cs" />
+    <Compile Include="BLL\Payments\PaymentStatusCode.cs" />
+    <Compile Include="BLL\Payments\PaymentStatusManager.cs" />
+    <Compile Include="BLL\Payments\PaymentStatusManager_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentStatus_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionAttributeValueLog.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionAttributeValueLogManager.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionAttributeValueLogManager_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionAttributeValueLog_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionLog.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionLogManager.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionLogManager_Ext.cs" />
+    <Compile Include="BLL\Payments\PaymentTransactionLog_Ext.cs" />
+    <Compile Include="BLL\Payments\Payment_Ext.cs" />
+    <Compile Include="BLL\Payments\TransactionStatus.cs" />
+    <Compile Include="BLL\Payments\TransactionStatusCode.cs" />
+    <Compile Include="BLL\Payments\TransactionStatusManager.cs" />
+    <Compile Include="BLL\Payments\TransactionStatusManager_Ext.cs" />
+    <Compile Include="BLL\Payments\TransactionStatus_Ext.cs" />
+    <Compile Include="BLL\Payments\TransactionType.cs" />
+    <Compile Include="BLL\Payments\TransactionTypeCode.cs" />
+    <Compile Include="BLL\Payments\TransactionTypeManager.cs" />
+    <Compile Include="BLL\Payments\TransactionTypeManager_Ext.cs" />
+    <Compile Include="BLL\Payments\TransactionType_Ext.cs" />
+    <Compile Include="BLL\PersistedBusinessObject.cs" />
+    <Compile Include="BLL\Promotions\Coupon.cs" />
+    <Compile Include="BLL\Promotions\CouponCode.cs" />
+    <Compile Include="BLL\Promotions\CouponManager.cs" />
+    <Compile Include="BLL\Promotions\CouponManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\CouponType.cs" />
+    <Compile Include="BLL\Promotions\CouponTypeCode.cs" />
+    <Compile Include="BLL\Promotions\CouponTypeManager.cs" />
+    <Compile Include="BLL\Promotions\CouponTypeManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\CouponType_Ext.cs" />
+    <Compile Include="BLL\Promotions\Coupon_Ext.cs" />
+    <Compile Include="BLL\Promotions\DiscountType.cs" />
+    <Compile Include="BLL\Promotions\DiscountTypeCode.cs" />
+    <Compile Include="BLL\Promotions\DiscountTypeManager.cs" />
+    <Compile Include="BLL\Promotions\DiscountTypeManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\DiscountType_Ext.cs" />
+    <Compile Include="BLL\Promotions\MetaPartnerCoupon.cs" />
+    <Compile Include="BLL\Promotions\MetaPartnerCouponManager.cs" />
+    <Compile Include="BLL\Promotions\MetaPartnerCouponManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\MetaPartnerCoupon_Ext.cs" />
+    <Compile Include="BLL\Promotions\Promotion.cs" />
+    <Compile Include="BLL\Promotions\PromotionCode.cs" />
+    <Compile Include="BLL\Promotions\PromotionCoupon.cs" />
+    <Compile Include="BLL\Promotions\PromotionCouponManager.cs" />
+    <Compile Include="BLL\Promotions\PromotionCouponManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\PromotionCoupon_Ext.cs" />
+    <Compile Include="BLL\Promotions\PromotionManager.cs" />
+    <Compile Include="BLL\Promotions\PromotionManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\PromotionType.cs" />
+    <Compile Include="BLL\Promotions\PromotionTypeCode.cs" />
+    <Compile Include="BLL\Promotions\PromotionTypeManager.cs" />
+    <Compile Include="BLL\Promotions\PromotionTypeManager_Ext.cs" />
+    <Compile Include="BLL\Promotions\PromotionType_Ext.cs" />
+    <Compile Include="BLL\Promotions\Promotion_Ext.cs" />
+    <Compile Include="BLL\SortableList.cs" />
+    <Compile Include="BLL\UserExperience\AdminHelp.cs" />
+    <Compile Include="BLL\UserExperience\AdminHelpManager.cs" />
+    <Compile Include="BLL\UserExperience\AdminHelpManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\AdminHelp_Ext.cs" />
+    <Compile Include="BLL\UserExperience\FriendlyError.cs" />
+    <Compile Include="BLL\UserExperience\FriendlyErrorManager.cs" />
+    <Compile Include="BLL\UserExperience\FriendlyErrorManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\FriendlyError_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelp.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpDefinition.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpDefinitionCode.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpDefinitionManager.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpDefinitionManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpDefinition_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpGroup.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpGroupCode.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpGroupManager.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpGroupManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpGroup_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpManager.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelpManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteHelp_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabel.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelDefinition.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelDefinitionCode.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelDefinitionManager.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelDefinitionManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelDefinition_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelManager.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabelManager_Ext.cs" />
+    <Compile Include="BLL\UserExperience\SiteLabel_Ext.cs" />
+    <Compile Include="BLL\Users\AccessMode.cs" />
+    <Compile Include="BLL\Users\AccessModeCode.cs" />
+    <Compile Include="BLL\Users\AccessModeManager.cs" />
+    <Compile Include="BLL\Users\AccessModeManager_Ext.cs" />
+    <Compile Include="BLL\Users\AccessMode_Ext.cs" />
+    <Compile Include="BLL\Users\Activity.cs" />
+    <Compile Include="BLL\Users\ActivityCode.cs" />
+    <Compile Include="BLL\Users\ActivityManager.cs" />
+    <Compile Include="BLL\Users\ActivityManager_Ext.cs" />
+    <Compile Include="BLL\Users\Activity_Ext.cs" />
+    <Compile Include="BLL\Users\User.cs" />
+    <Compile Include="BLL\Users\UserManager.cs" />
+    <Compile Include="BLL\Users\UserManager_Ext.cs" />
+    <Compile Include="BLL\Users\UserRole.cs" />
+    <Compile Include="BLL\Users\UserRoleActivity.cs" />
+    <Compile Include="BLL\Users\UserRoleActivityManager.cs" />
+    <Compile Include="BLL\Users\UserRoleActivityManager_Ext.cs" />
+    <Compile Include="BLL\Users\UserRoleActivity_Ext.cs" />
+    <Compile Include="BLL\Users\UserRoleCode.cs" />
+    <Compile Include="BLL\Users\UserRoleManager.cs" />
+    <Compile Include="BLL\Users\UserRoleManager_Ext.cs" />
+    <Compile Include="BLL\Users\UserRoleUser.cs" />
+    <Compile Include="BLL\Users\UserRoleUserManager.cs" />
+    <Compile Include="BLL\Users\UserRoleUserManager_Ext.cs" />
+    <Compile Include="BLL\Users\UserRoleUser_Ext.cs" />
+    <Compile Include="BLL\Users\UserRole_Ext.cs" />
+    <Compile Include="BLL\Users\User_Ext.cs" />
+    <Compile Include="DAL\Accounts\Account.cs" />
+    <Compile Include="DAL\Accounts\AccountAttribute.cs" />
+    <Compile Include="DAL\Accounts\AccountAttributeValue.cs" />
+    <Compile Include="DAL\Accounts\AccountAttributeValue_Ext.cs" />
+    <Compile Include="DAL\Accounts\AccountAttribute_Ext.cs" />
+    <Compile Include="DAL\Accounts\AccountSubType.cs" />
+    <Compile Include="DAL\Accounts\AccountSubType_Ext.cs" />
+    <Compile Include="DAL\Accounts\Account_Ext.cs" />
+    <Compile Include="DAL\Accounts\BankAccount.cs" />
+    <Compile Include="DAL\Accounts\BankAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\BillPayAccount.cs" />
+    <Compile Include="DAL\Accounts\BillPayAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\CreditAccount.cs" />
+    <Compile Include="DAL\Accounts\CreditAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\CreditCardType.cs" />
+    <Compile Include="DAL\Accounts\CreditCardType_Ext.cs" />
+    <Compile Include="DAL\Accounts\Currency.cs" />
+    <Compile Include="DAL\Accounts\CurrencyConversion.cs" />
+    <Compile Include="DAL\Accounts\CurrencyConversion_Ext.cs" />
+    <Compile Include="DAL\Accounts\Currency_Ext.cs" />
+    <Compile Include="DAL\Accounts\DebitAccount.cs" />
+    <Compile Include="DAL\Accounts\DebitAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\ExternalAccount.cs" />
+    <Compile Include="DAL\Accounts\ExternalAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\Frequency.cs" />
+    <Compile Include="DAL\Accounts\Frequency_Ext.cs" />
+    <Compile Include="DAL\Accounts\FundAccount.cs" />
+    <Compile Include="DAL\Accounts\FundAccountType.cs" />
+    <Compile Include="DAL\Accounts\FundAccountType_Ext.cs" />
+    <Compile Include="DAL\Accounts\FundAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\LoanAccount.cs" />
+    <Compile Include="DAL\Accounts\LoanAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\LoanToMetaPartner.cs" />
+    <Compile Include="DAL\Accounts\LoanToMetaPartner_Ext.cs" />
+    <Compile Include="DAL\Accounts\MetaTransferAccount.cs" />
+    <Compile Include="DAL\Accounts\MetaTransferAccount_Ext.cs" />
+    <Compile Include="DAL\Accounts\ParticipatingPartner.cs" />
+    <Compile Include="DAL\Accounts\ParticipatingPartner_Ext.cs" />
+    <Compile Include="DAL\Accounts\PaymentInstitution.cs" />
+    <Compile Include="DAL\Accounts\PaymentInstitution_Ext.cs" />
+    <Compile Include="DAL\Accounts\StoredValueAccount.cs" />
+    <Compile Include="DAL\Accounts\StoredValueAccount_Ext.cs" />
+    <Compile Include="DAL\Core\AttributeType.cs" />
+    <Compile Include="DAL\Core\AttributeType_Ext.cs" />
+    <Compile Include="DAL\Core\BaseAttribute.cs" />
+    <Compile Include="DAL\Core\BaseAttribute_Ext.cs" />
+    <Compile Include="DAL\Core\DataType.cs" />
+    <Compile Include="DAL\Core\DataType_Ext.cs" />
+    <Compile Include="DAL\Core\DebugAttribute.cs" />
+    <Compile Include="DAL\Core\DebugAttributeValueLog.cs" />
+    <Compile Include="DAL\Core\DebugAttributeValueLog_Ext.cs" />
+    <Compile Include="DAL\Core\DebugAttribute_Ext.cs" />
+    <Compile Include="DAL\Core\DebugLog.cs" />
+    <Compile Include="DAL\Core\DebugLog_Ext.cs" />
+    <Compile Include="DAL\Core\Error.cs" />
+    <Compile Include="DAL\Core\Error_Ext.cs" />
+    <Compile Include="DAL\Core\EventType.cs" />
+    <Compile Include="DAL\Core\EventType_Ext.cs" />
+    <Compile Include="DAL\Core\SeverityLevel.cs" />
+    <Compile Include="DAL\Core\SeverityLevel_Ext.cs" />
+    <Compile Include="DAL\Customers\Bank.cs" />
+    <Compile Include="DAL\Customers\Bank_Ext.cs" />
+    <Compile Include="DAL\Customers\Business.cs" />
+    <Compile Include="DAL\Customers\BusinessCustomer.cs" />
+    <Compile Include="DAL\Customers\BusinessCustomer_Ext.cs" />
+    <Compile Include="DAL\Customers\Business_Ext.cs" />
+    <Compile Include="DAL\Customers\Carrier.cs" />
+    <Compile Include="DAL\Customers\Carrier_Ext.cs" />
+    <Compile Include="DAL\Customers\Customer.cs" />
+    <Compile Include="DAL\Customers\Customer_Ext.cs" />
+    <Compile Include="DAL\Customers\Location.cs" />
+    <Compile Include="DAL\Customers\LocationType.cs" />
+    <Compile Include="DAL\Customers\LocationType_Ext.cs" />
+    <Compile Include="DAL\Customers\Location_Ext.cs" />
+    <Compile Include="DAL\Customers\Merchant.cs" />
+    <Compile Include="DAL\Customers\Merchant_Ext.cs" />
+    <Compile Include="DAL\Customers\MetaPartner.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerContact.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerContact_Ext.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerEmail.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerEmail_Ext.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerPhone.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerPhone_Ext.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerSubType.cs" />
+    <Compile Include="DAL\Customers\MetaPartnerSubType_Ext.cs" />
+    <Compile Include="DAL\Customers\MetaPartner_Ext.cs" />
+    <Compile Include="DAL\Customers\Reseller.cs" />
+    <Compile Include="DAL\Customers\ResellerType.cs" />
+    <Compile Include="DAL\Customers\ResellerType_Ext.cs" />
+    <Compile Include="DAL\Customers\Reseller_Ext.cs" />
+    <Compile Include="DAL\Environments\Country.cs" />
+    <Compile Include="DAL\Environments\Country_Ext.cs" />
+    <Compile Include="DAL\Environments\DateFormat.cs" />
+    <Compile Include="DAL\Environments\DateFormat_Ext.cs" />
+    <Compile Include="DAL\Environments\Locale.cs" />
+    <Compile Include="DAL\Environments\Locale_Ext.cs" />
+    <Compile Include="DAL\Events\AuditAttributeValueLog.cs" />
+    <Compile Include="DAL\Events\AuditAttributeValueLog_Ext.cs" />
+    <Compile Include="DAL\Events\AuditLog.cs" />
+    <Compile Include="DAL\Events\AuditLog_Ext.cs" />
+    <Compile Include="DAL\Events\Event.cs" />
+    <Compile Include="DAL\Events\EventAttribute.cs" />
+    <Compile Include="DAL\Events\EventAttribute_Ext.cs" />
+    <Compile Include="DAL\Events\EventFee.cs" />
+    <Compile Include="DAL\Events\EventFee_Ext.cs" />
+    <Compile Include="DAL\Events\EventPromotion.cs" />
+    <Compile Include="DAL\Events\EventPromotion_Ext.cs" />
+    <Compile Include="DAL\Events\EventType.cs" />
+    <Compile Include="DAL\Events\EventType_Ext.cs" />
+    <Compile Include="DAL\Events\Event_Ext.cs" />
+    <Compile Include="DAL\Events\SpecificEventAttribute.cs" />
+    <Compile Include="DAL\Events\SpecificEventAttribute_Ext.cs" />
+    <Compile Include="DAL\Notifications\Notification.cs" />
+    <Compile Include="DAL\Notifications\NotificationAttributeValueLog.cs" />
+    <Compile Include="DAL\Notifications\NotificationAttributeValueLog_Ext.cs" />
+    <Compile Include="DAL\Notifications\NotificationDeliveryLog.cs" />
+    <Compile Include="DAL\Notifications\NotificationDeliveryLog_Ext.cs" />
+    <Compile Include="DAL\Notifications\NotificationDeliveryType.cs" />
+    <Compile Include="DAL\Notifications\NotificationDeliveryType_Ext.cs" />
+    <Compile Include="DAL\Notifications\NotificationLog.cs" />
+    <Compile Include="DAL\Notifications\NotificationLog_Ext.cs" />
+    <Compile Include="DAL\Notifications\NotificationTemplate.cs" />
+    <Compile Include="DAL\Notifications\NotificationTemplate_Ext.cs" />
+    <Compile Include="DAL\Notifications\Notification_Ext.cs" />
+    <Compile Include="DAL\Orders\Order.cs" />
+    <Compile Include="DAL\Orders\OrderCoupon.cs" />
+    <Compile Include="DAL\Orders\OrderCoupon_Ext.cs" />
+    <Compile Include="DAL\Orders\OrderFee.cs" />
+    <Compile Include="DAL\Orders\OrderFee_Ext.cs" />
+    <Compile Include="DAL\Orders\OrderStatus.cs" />
+    <Compile Include="DAL\Orders\OrderStatus_Ext.cs" />
+    <Compile Include="DAL\Orders\Order_Ext.cs" />
+    <Compile Include="DAL\Payments\Fee.cs" />
+    <Compile Include="DAL\Payments\FeeType.cs" />
+    <Compile Include="DAL\Payments\FeeType_Ext.cs" />
+    <Compile Include="DAL\Payments\Fee_Ext.cs" />
+    <Compile Include="DAL\Payments\Payment.cs" />
+    <Compile Include="DAL\Payments\PaymentStatus.cs" />
+    <Compile Include="DAL\Payments\PaymentStatus_Ext.cs" />
+    <Compile Include="DAL\Payments\PaymentTransactionAttributeValueLog.cs" />
+    <Compile Include="DAL\Payments\PaymentTransactionAttributeValueLog_Ext.cs" />
+    <Compile Include="DAL\Payments\PaymentTransactionLog.cs" />
+    <Compile Include="DAL\Payments\PaymentTransactionLog_Ext.cs" />
+    <Compile Include="DAL\Payments\Payment_Ext.cs" />
+    <Compile Include="DAL\Payments\TransactionStatus.cs" />
+    <Compile Include="DAL\Payments\TransactionStatus_Ext.cs" />
+    <Compile Include="DAL\Payments\TransactionType.cs" />
+    <Compile Include="DAL\Payments\TransactionType_Ext.cs" />
+    <Compile Include="DAL\Promotions\Coupon.cs" />
+    <Compile Include="DAL\Promotions\CouponType.cs" />
+    <Compile Include="DAL\Promotions\CouponType_Ext.cs" />
+    <Compile Include="DAL\Promotions\Coupon_Ext.cs" />
+    <Compile Include="DAL\Promotions\DiscountType.cs" />
+    <Compile Include="DAL\Promotions\DiscountType_Ext.cs" />
+    <Compile Include="DAL\Promotions\MetaPartnerCoupon.cs" />
+    <Compile Include="DAL\Promotions\MetaPartnerCoupon_Ext.cs" />
+    <Compile Include="DAL\Promotions\Promotion.cs" />
+    <Compile Include="DAL\Promotions\PromotionCoupon.cs" />
+    <Compile Include="DAL\Promotions\PromotionCoupon_Ext.cs" />
+    <Compile Include="DAL\Promotions\PromotionType.cs" />
+    <Compile Include="DAL\Promotions\PromotionType_Ext.cs" />
+    <Compile Include="DAL\Promotions\Promotion_Ext.cs" />
+    <Compile Include="DAL\UserExperience\AdminHelp.cs" />
+    <Compile Include="DAL\UserExperience\AdminHelp_Ext.cs" />
+    <Compile Include="DAL\UserExperience\FriendlyError.cs" />
+    <Compile Include="DAL\UserExperience\FriendlyError_Ext.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelp.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelpDefinition.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelpDefinition_Ext.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelpGroup.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelpGroup_Ext.cs" />
+    <Compile Include="DAL\UserExperience\SiteHelp_Ext.cs" />
+    <Compile Include="DAL\UserExperience\SiteLabel.cs" />
+    <Compile Include="DAL\UserExperience\SiteLabelDefinition.cs" />
+    <Compile Include="DAL\UserExperience\SiteLabelDefinition_Ext.cs" />
+    <Compile Include="DAL\UserExperience\SiteLabel_Ext.cs" />
+    <Compile Include="DAL\Users\AccessMode.cs" />
+    <Compile Include="DAL\Users\AccessMode_Ext.cs" />
+    <Compile Include="DAL\Users\Activity.cs" />
+    <Compile Include="DAL\Users\Activity_Ext.cs" />
+    <Compile Include="DAL\Users\User.cs" />
+    <Compile Include="DAL\Users\UserRole.cs" />
+    <Compile Include="DAL\Users\UserRoleActivity.cs" />
+    <Compile Include="DAL\Users\UserRoleActivity_Ext.cs" />
+    <Compile Include="DAL\Users\UserRoleUser.cs" />
+    <Compile Include="DAL\Users\UserRoleUser_Ext.cs" />
+    <Compile Include="DAL\Users\UserRole_Ext.cs" />
+    <Compile Include="DAL\Users\User_Ext.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\BaseDataAccessObject.cs" />
+    <Compile Include="Utility\CacheManager.cs" />
+    <Compile Include="Utility\CustomAppException.cs" />
+    <Compile Include="Utility\FastGenericPrincipal.cs" />
+    <Compile Include="Utility\FileManager.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\SqlManager.cs" />
+    <Compile Include="Web References\MComm.CarrierSim.CustomerManager\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.CarrierSim.PhoneManager\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.Ganadero.Simulator\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.MultiBank.Simulator\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.Nuevatel.ClientInformation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.Nuevatel.CustomerManager\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.SMS.RequestApproval\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.SMS.SMSSenderUSA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MComm.SMS.SMSSender\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://127.0.0.1/MW.MComm.SMS.WebService/smsSender.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.SMS.SMSSenderUSA\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/MW.MComm.SMS.WebService/smsSender.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_SMS_SMSSenderUSA_smsSender</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://216.184.113.58:8080/ServiceWS/ClientInformation%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.Nuevatel.ClientInformation\</RelPath>
+      <UpdateFromURL>http://216.184.113.58:8080/ServiceWS/ClientInformation%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_Nuevatel_ClientInformation_ClientInfoService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.Nuevatel.CustomerManager\</RelPath>
+      <UpdateFromURL>http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_Nuevatel_CustomerManager_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://216.184.113.85/satmlBypass/requestAproval.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.SMS.RequestApproval\</RelPath>
+      <UpdateFromURL>http://216.184.113.85/satmlBypass/requestAproval.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_SMS_RequestApproval_requestAproval</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.SMS.SMSSender\</RelPath>
+      <UpdateFromURL>http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_SMS_SMSSender_smsSender</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.Ganadero.Simulator\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/MW.MComm.GanaderoSim.WebService/Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_Ganadero_Simulator_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.CarrierSim.CustomerManager\</RelPath>
+      <UpdateFromURL>http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_CarrierSim_CustomerManager_CustomerManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.CarrierSim.PhoneManager\</RelPath>
+      <UpdateFromURL>http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_CarrierSim_PhoneManager_PhoneManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MComm.MultiBank.Simulator\</RelPath>
+      <UpdateFromURL>http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MW_MComm_WalletSolution_MComm_Multibank_Simulator_multiBank</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Web References\MComm.SMS.SMSSender\smsSender.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.SMS.SMSSender\OutgoingSMSResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.SMS.SMSSender\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.SMS.SMSSender\smsSender.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\addCreditResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\balance1Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\balance2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\balance3Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\balance4Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\discount1Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\discount2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\service1.disco" />
+    <None Include="Web References\MComm.Nuevatel.CustomerManager\service1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.Nuevatel.ClientInformation\ClientInformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.ClientInformation\ClientInfoService.wsdl" />
+    <None Include="Web References\MComm.Nuevatel.ClientInformation\consumptionEntityServicesForClient.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Nuevatel.ClientInformation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.SMS.RequestApproval\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.SMS.RequestApproval\requestAproval.disco" />
+    <None Include="Web References\MComm.SMS.RequestApproval\requestAproval.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.Ganadero.Simulator\AccountInformationResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Ganadero.Simulator\AccountTransferResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Ganadero.Simulator\CurrencyConversionCalculationResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Ganadero.Simulator\CustomerInformationResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.Ganadero.Simulator\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.Ganadero.Simulator\Service.disco" />
+    <None Include="Web References\MComm.Ganadero.Simulator\Service.wsdl" />
+    <None Include="Web References\MComm.SMS.SMSSenderUSA\smsSender.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.SMS.SMSSenderUSA\OutgoingSMSResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.SMS.SMSSenderUSA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.SMS.SMSSenderUSA\smsSender.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.CarrierSim.CustomerManager\CustomerManager.wsdl" />
+    <None Include="Web References\MComm.CarrierSim.PhoneManager\PhoneManager.disco" />
+    <None Include="Web References\MComm.CarrierSim.PhoneManager\PhoneManager.wsdl" />
+    <None Include="Web References\MComm.CarrierSim.PhoneManager\PhoneResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.CarrierSim.PhoneManager\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.CarrierSim.CustomerManager\CustomerManager.disco" />
+    <None Include="Web References\MComm.CarrierSim.CustomerManager\CustomerResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.CarrierSim.CustomerManager\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\MComm.MultiBank.Simulator\AccountQueryResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.MultiBank.Simulator\BankQueryResult1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.MultiBank.Simulator\CustomerQueryResult1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MComm.MultiBank.Simulator\multiBank.disco" />
+    <None Include="Web References\MComm.MultiBank.Simulator\multiBank.wsdl" />
+    <None Include="Web References\MComm.MultiBank.Simulator\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MComm.MultiBank.Simulator\TransferResult1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

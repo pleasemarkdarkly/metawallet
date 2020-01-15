@@ -1,0 +1,1 @@
+C:\Work\metawallet\MComm\MW.MComm.WalletSolution.UnitTest\obj\Debug\ResolveAssemblyReference.cache

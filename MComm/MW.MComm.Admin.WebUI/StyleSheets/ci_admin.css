@@ -1,0 +1,159 @@
+/* Text classes */
+
+.command_title { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #d7681e; font-size: 22pt; font-weight: bold; margin-right: 5px; margin-bottom: 5px; }
+
+.command_helptext { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 11pt; font-weight: normal; }    
+
+.command_header { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 14pt; font-weight: bold; }
+
+.command_label { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 14pt; font-weight: normal; }
+
+.command_label_highlighted { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #cd1313; font-size: 14pt; font-weight: bold; }
+
+
+.logout_button_text {  font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #84959c; font-size: 12pt; font-weight: bold; }
+.button_text { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #ffffff; font-size: 12pt; font-weight: bold; }
+
+
+.title { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 22pt; font-weight: bold; margin-right: 5px; margin-bottom: 5px; }
+
+.list_normal { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 14pt; font-weight: normal; text-decoration: none; }
+.list_bold { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 14pt; font-weight: bold; text-decoration: none; }
+.list_highlighted { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #cd1313; font-size: 14pt; font-weight: bold; text-decoration: none; }
+
+.burn_queue_header { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #d7681e; font-size: 12pt; font-weight: bold; text-decoration: none; }
+.burn_queue_pager { text-align: center; font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 12pt; font-weight: bold; text-decoration: none; }
+
+.job_header { padding-right: 3px; font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 12pt; font-weight: normal; text-align:right; }
+.job_value { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 18pt; font-weight: bold; text-align:left;  }
+.job_subvalue { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 12pt; font-weight: normal;  }
+
+.keypad_box { Z-INDEX: 10; LEFT: 235px; BACKGROUND-IMAGE: url(/MW.MComm.Admin.WebUI/images/calculator_whitebox.gif); WIDTH: 347px; POSITION: absolute; TOP: 45px; HEIGHT: 510px; }
+.keypad_window { LEFT:90px; POSITION:absolute; TOP:100px }
+
+.keypad_helptext 
+    { 
+        position:absolute; left: 10px; width: 327px; top: 10px; text-align: center;
+        font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 11pt; font-weight: normal; 
+    }    
+    
+.keypad_valuetext { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 18pt; font-weight: bold; }
+.keypad_number { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #ffffff; font-size: 18pt; font-weight: bold; }
+
+.album_title { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 10pt; font-weight: normal; }    
+.corp_album_title { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #aaaaaa; font-size: 10pt; font-weight: normal; }    
+    
+/* background classes */
+
+.bgMediaBar { Z-INDEX: -1; LEFT: 0px; BACKGROUND-IMAGE: url(/MW.MComm.Admin.WebUI/images/media_bar_admin.gif); WIDTH: 800px; POSITION: absolute; TOP: 0px; HEIGHT: 600px }
+.bgCoffeeHouse { Z-INDEX: -1; LEFT: 0px; BACKGROUND-IMAGE: url(/MW.MComm.Admin.WebUI/images/coffee_h_admin.gif); WIDTH: 800px; POSITION: absolute; TOP: 0px; HEIGHT: 600px }
+.bgText { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #ffffff; font-size: 12pt; font-weight: normal; }
+.bgHeader { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #ffffff; font-size: 12pt; font-weight: bold; }
+.bgHighlighted { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #77ff77; font-size: 12pt; font-weight: bold; text-decoration: none; }
+
+/* modal classes */
+
+.screen_disabler { position:absolute; background-color: silver; z-index: 5; left: 0px; top: 0px; width: 800px; height: 600px; filter:alpha(opacity=50) }
+
+/* grid/list classes */
+
+.tableCell { background-color: #ffffff; }
+.altTableCell { background-color: #eeeeee; }
+.selTableCell { background-color : #cccccc; }
+
+.songlist { background-color: #ffffff; padding-left: 30px;}
+.songlistHeader { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 8pt; font-weight: bold;}
+.songlistCell {}
+.songlistRank { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 8pt; font-weight: normal; }
+.songlistSongTitle { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #000000; font-size: 12pt; font-weight: normal; }
+.songlistArtistName { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 11pt; font-weight: normal;}
+.songlistAlbumName { font-family: "Arial Narrow, Arial, Sans-Serif, Verdana"; color: #2b4049; font-size: 11pt; font-weight: normal;}
+
+.selFeatureAlbum { background-color: #ccffcc; border: solid 1px black; }
+.corp_image { cursor: default; filter:alpha(opacity=50); z-index: -1; }
+
+/* frame border classes */
+
+/* gray box */
+
+.box_gray { background-color: #ecf4f7; }
+
+.imgbox_gray_b { background-color: #ecf4f7; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_b.gif);width:1px;height:10px;}
+.imgbkgbox_gray_b {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_b.gif);}
+.imgabox_gray_b  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_b.gif);width:1px;height:10px;cursor:hand;}
+
+.imgbox_gray_bl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_bl.gif);width:10px;height:10px;}
+.imgbkgbox_gray_bl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_bl.gif);}
+.imgabox_gray_bl  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_bl.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_gray_br {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_br.gif);width:10px;height:10px;}
+.imgbkgbox_gray_br {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_br.gif);}
+.imgabox_gray_br  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_br.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_gray_l { background-color: #ecf4f7; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_l.gif);width:10px;height:1px;}
+.imgbkgbox_gray_l {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_l.gif);}
+.imgabox_gray_l  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_l.gif);width:10px;height:1px;cursor:hand;}
+
+.imgbox_gray_r { background-color: #ecf4f7; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_r.gif);width:10px;height:1px;}
+.imgbkgbox_gray_r {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_r.gif);}
+.imgabox_gray_r  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_r.gif);width:10px;height:1px;cursor:hand;}
+
+.imgbox_gray_t {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_t.gif);width:1px;height:10px;}
+.imgbkgbox_gray_t {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_t.gif);}
+.imgabox_gray_t  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_t.gif);width:1px;height:10px;cursor:hand;}
+
+.imgbox_gray_tl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tl.gif);width:10px;height:10px;}
+.imgbkgbox_gray_tl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tl.gif);}
+.imgabox_gray_tl  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tl.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_gray_tr {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tr.gif);width:10px;height:10px;}
+.imgbkgbox_gray_tr {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tr.gif);}
+.imgabox_gray_tr  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_gray_tr.gif);width:10px;height:10px;cursor:hand;}
+
+/* white box */
+
+.box_white { background-color: #ffffff; }
+
+.imgbox_white_b { background-color: #ffffff; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_b.gif);width:1px;height:10px;}
+.imgbkgbox_white_b {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_b.gif);}
+.imgabox_white_b  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_b.gif);width:1px;height:10px;cursor:hand;}
+
+.imgbox_white_bl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_bl.gif);width:10px;height:10px;}
+.imgbkgbox_white_bl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_bl.gif);}
+.imgabox_white_bl  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_bl.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_white_br {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_br.gif);width:10px;height:10px;}
+.imgbkgbox_white_br {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_br.gif);}
+.imgabox_white_br  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_br.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_white_l { background-color: #ffffff; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_l.gif);width:10px;height:1px;}
+.imgbkgbox_white_l {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_l.gif);}
+.imgabox_white_l  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_l.gif);width:10px;height:1px;cursor:hand;}
+
+.imgbox_white_r { background-color: #ffffff; background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_r.gif);width:10px;height:1px;}
+.imgbkgbox_white_r {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_r.gif);}
+.imgabox_white_r  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_r.gif);width:10px;height:1px;cursor:hand;}
+
+.imgbox_white_t {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_t.gif);width:1px;height:10px;}
+.imgbkgbox_white_t {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_t.gif);}
+.imgabox_white_t  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_t.gif);width:1px;height:10px;cursor:hand;}
+
+.imgbox_white_tl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tl.gif);width:10px;height:10px;}
+.imgbkgbox_white_tl {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tl.gif);}
+.imgabox_white_tl  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tl.gif);width:10px;height:10px;cursor:hand;}
+
+.imgbox_white_tr {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tr.gif);width:10px;height:10px;}
+.imgbkgbox_white_tr {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tr.gif);}
+.imgabox_white_tr  {background-image:url(/MW.MComm.Admin.WebUI/images/frames/box_white_tr.gif);width:10px;height:10px;cursor:hand;}
+
+/* scrollers */
+
+.scroll_up_icon { background-image: url(/MW.MComm.Admin.WebUI/images/up_scroll.gif) }
+.scroll_down_icon { background-image: url(/MW.MComm.Admin.WebUI/images/down_scroll.gif) }
+
+.nowplaying_scroll_up { position: absolute; left: 740px; top: 138px; width: 43px; height:43px; background-image: url(/MW.MComm.Admin.WebUI/images/up_scroll.gif) }
+.nowplaying_scroll_down { position: absolute; left: 740px; top: 470px; width: 43px;  height:43px; background-image: url(/MW.MComm.Admin.WebUI/images/down_scroll.gif) }
+
+.burnqueue_scroll_up { position: absolute; left: 740px; top: 188px; width: 43px; height:43px; background-image: url(/MW.MComm.Admin.WebUI/images/up_scroll.gif) }
+.burnqueue_scroll_down { position: absolute; left: 740px; top: 520px; width: 43px;  height:43px; background-image: url(/MW.MComm.Admin.WebUI/images/down_scroll.gif) }
+

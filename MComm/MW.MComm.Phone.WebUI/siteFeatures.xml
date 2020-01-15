@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xml>
+	<item name="User Experience" target="" activityName="UserExperience" id="130" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx">
+		<item name="Site Help" target="" activityName="UserExperience/SearchSiteHelpData" id="1067" url="Pages/Desktop/UserExperience/SearchSiteHelpData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchSiteHelpData" id="10134" url="Pages/Desktop/UserExperience/SearchSiteHelpData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteHelp" id="10133" url="Pages/Desktop/UserExperience/EditSiteHelp.aspx"></item>
+		</item>
+		<item name="Site Help Group" target="" activityName="UserExperience/ListSiteHelpGroupData" id="1068" url="Pages/Desktop/UserExperience/ListSiteHelpGroupData.aspx">
+			<item name="All" target="" activityName="UserExperience/ListSiteHelpGroupData" id="10136" url="Pages/Desktop/UserExperience/ListSiteHelpGroupData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteHelpGroup" id="10135" url="Pages/Desktop/UserExperience/EditSiteHelpGroup.aspx"></item>
+		</item>
+		<item name="Site Label" target="" activityName="UserExperience/SearchSiteLabelData" id="1069" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx">
+			<item name="Search" target="" activityName="UserExperience/SearchSiteLabelData" id="10138" url="Pages/Desktop/UserExperience/SearchSiteLabelData.aspx"></item>
+			<item name="Details" target="" activityName="UserExperience/EditSiteLabel" id="10137" url="Pages/Desktop/UserExperience/EditSiteLabel.aspx"></item>
+		</item>
+	</item>
+</xml>

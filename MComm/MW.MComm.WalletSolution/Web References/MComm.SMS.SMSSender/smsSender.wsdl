@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://skill3.com/webservices/sms2006/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://skill3.com/webservices/sms2006/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://skill3.com/webservices/sms2006/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="sendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendSMSResult" type="tns:OutgoingSMSResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OutgoingSMSResults">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StatusObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfOutgoingSMS" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StatusObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" default="" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRecords" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximumListSizeExceeded" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOutgoingSMS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OutgoingSMS" nillable="true" type="tns:OutgoingSMS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OutgoingSMS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PersistedBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" default="" name="Sender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="Receiver" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="NowSMSServer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="SMSContent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="ServerResponse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="InternalID" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PrimaryKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PrimaryName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PrimaryIndex" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PrimarySortColumn" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PersistedBusinessObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BusinessObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedByUserID" nillable="true" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedByUserID" nillable="true" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Timestamp" nillable="true" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObject" />
+      <s:element name="pushWAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WapUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pushWAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pushWAPResult" type="tns:OutgoingSMSResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutgoingSMSResults" nillable="true" type="tns:OutgoingSMSResults" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="sendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:sendSMS" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:sendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPSoapIn">
+    <wsdl:part name="parameters" element="tns:pushWAP" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPSoapOut">
+    <wsdl:part name="parameters" element="tns:pushWAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSHttpGetIn">
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutgoingSMSResults" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPHttpGetIn">
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="WapUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutgoingSMSResults" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSHttpPostIn">
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutgoingSMSResults" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPHttpPostIn">
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="WapUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="pushWAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutgoingSMSResults" />
+  </wsdl:message>
+  <wsdl:portType name="smsSenderSoap">
+    <wsdl:operation name="sendSMS">
+      <wsdl:input message="tns:sendSMSSoapIn" />
+      <wsdl:output message="tns:sendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <wsdl:input message="tns:pushWAPSoapIn" />
+      <wsdl:output message="tns:pushWAPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="smsSenderHttpGet">
+    <wsdl:operation name="sendSMS">
+      <wsdl:input message="tns:sendSMSHttpGetIn" />
+      <wsdl:output message="tns:sendSMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <wsdl:input message="tns:pushWAPHttpGetIn" />
+      <wsdl:output message="tns:pushWAPHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="smsSenderHttpPost">
+    <wsdl:operation name="sendSMS">
+      <wsdl:input message="tns:sendSMSHttpPostIn" />
+      <wsdl:output message="tns:sendSMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <wsdl:input message="tns:pushWAPHttpPostIn" />
+      <wsdl:output message="tns:pushWAPHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="smsSenderSoap" type="tns:smsSenderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendSMS">
+      <soap:operation soapAction="http://skill3.com/webservices/sms2006/sendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <soap:operation soapAction="http://skill3.com/webservices/sms2006/pushWAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsSenderSoap12" type="tns:smsSenderSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendSMS">
+      <soap12:operation soapAction="http://skill3.com/webservices/sms2006/sendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <soap12:operation soapAction="http://skill3.com/webservices/sms2006/pushWAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsSenderHttpGet" type="tns:smsSenderHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="sendSMS">
+      <http:operation location="/sendSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <http:operation location="/pushWAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsSenderHttpPost" type="tns:smsSenderHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="sendSMS">
+      <http:operation location="/sendSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushWAP">
+      <http:operation location="/pushWAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smsSender">
+    <wsdl:port name="smsSenderSoap" binding="tns:smsSenderSoap">
+      <soap:address location="http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsSenderSoap12" binding="tns:smsSenderSoap12">
+      <soap12:address location="http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsSenderHttpGet" binding="tns:smsSenderHttpGet">
+      <http:address location="http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsSenderHttpPost" binding="tns:smsSenderHttpPost">
+      <http:address location="http://216.184.113.85/W.MComm.SMS.WebService/smsSender.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

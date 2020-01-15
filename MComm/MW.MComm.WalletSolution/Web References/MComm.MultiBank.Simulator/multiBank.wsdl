@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="listBanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="listBanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="listBanksResult" type="tns:BankQueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BankQueryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErroCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Banks" type="tns:ArrayOfBank" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="bank" type="tns:bank" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="bank">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultCurrency" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="accountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountInfoResult" type="tns:AccountQueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountQueryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErroCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Accountdata" type="tns:account" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="account">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="accountHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountHistoryResult" type="tns:HistoryQueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HistoryQueryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErroCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Accountdata" type="tns:account" />
+          <s:element minOccurs="0" maxOccurs="1" name="Detail" type="tns:ArrayOfAccountDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccountDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="accountDetail" type="tns:accountDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="accountDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="customerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="customerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerInfoResult" type="tns:CustomerQueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerQueryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErroCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="account" type="tns:account" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="transfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SenderBank" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiverBank" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="transferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="transferResult" type="tns:TransferResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransferResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewBalanceSender" type="tns:account" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewBalanceReceiver" type="tns:account" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BankId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBalanceResult" type="tns:TransferResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BankQueryResult" type="tns:BankQueryResult" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listBanksSoapIn">
+    <wsdl:part name="parameters" element="tns:listBanks" />
+  </wsdl:message>
+  <wsdl:message name="listBanksSoapOut">
+    <wsdl:part name="parameters" element="tns:listBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:accountInfo" />
+  </wsdl:message>
+  <wsdl:message name="accountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:accountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:accountHistory" />
+  </wsdl:message>
+  <wsdl:message name="accountHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:accountHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="customerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:customerInfo" />
+  </wsdl:message>
+  <wsdl:message name="customerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:customerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="transferSoapIn">
+    <wsdl:part name="parameters" element="tns:transfer" />
+  </wsdl:message>
+  <wsdl:message name="transferSoapOut">
+    <wsdl:part name="parameters" element="tns:transferResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBalance" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="listBanksHttpGetIn" />
+  <wsdl:message name="listBanksHttpGetOut">
+    <wsdl:part name="Body" element="tns:BankQueryResult" />
+  </wsdl:message>
+  <wsdl:message name="listBanksHttpPostIn" />
+  <wsdl:message name="listBanksHttpPostOut">
+    <wsdl:part name="Body" element="tns:BankQueryResult" />
+  </wsdl:message>
+  <wsdl:portType name="multiBankSoap">
+    <wsdl:operation name="listBanks">
+      <wsdl:input message="tns:listBanksSoapIn" />
+      <wsdl:output message="tns:listBanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountInfo">
+      <wsdl:input message="tns:accountInfoSoapIn" />
+      <wsdl:output message="tns:accountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountHistory">
+      <wsdl:input message="tns:accountHistorySoapIn" />
+      <wsdl:output message="tns:accountHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="customerInfo">
+      <wsdl:input message="tns:customerInfoSoapIn" />
+      <wsdl:output message="tns:customerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="transfer">
+      <wsdl:input message="tns:transferSoapIn" />
+      <wsdl:output message="tns:transferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalance">
+      <wsdl:input message="tns:UpdateBalanceSoapIn" />
+      <wsdl:output message="tns:UpdateBalanceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="multiBankHttpGet">
+    <wsdl:operation name="listBanks">
+      <wsdl:input message="tns:listBanksHttpGetIn" />
+      <wsdl:output message="tns:listBanksHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="multiBankHttpPost">
+    <wsdl:operation name="listBanks">
+      <wsdl:input message="tns:listBanksHttpPostIn" />
+      <wsdl:output message="tns:listBanksHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="multiBankSoap" type="tns:multiBankSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listBanks">
+      <soap:operation soapAction="http://tempuri.org/listBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountInfo">
+      <soap:operation soapAction="http://tempuri.org/accountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountHistory">
+      <soap:operation soapAction="http://tempuri.org/accountHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerInfo">
+      <soap:operation soapAction="http://tempuri.org/customerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transfer">
+      <soap:operation soapAction="http://tempuri.org/transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalance">
+      <soap:operation soapAction="http://tempuri.org/UpdateBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="multiBankSoap12" type="tns:multiBankSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listBanks">
+      <soap12:operation soapAction="http://tempuri.org/listBanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountInfo">
+      <soap12:operation soapAction="http://tempuri.org/accountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountHistory">
+      <soap12:operation soapAction="http://tempuri.org/accountHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerInfo">
+      <soap12:operation soapAction="http://tempuri.org/customerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transfer">
+      <soap12:operation soapAction="http://tempuri.org/transfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalance">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="multiBankHttpGet" type="tns:multiBankHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="listBanks">
+      <http:operation location="/listBanks" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="multiBankHttpPost" type="tns:multiBankHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="listBanks">
+      <http:operation location="/listBanks" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="multiBank">
+    <wsdl:port name="multiBankSoap" binding="tns:multiBankSoap">
+      <soap:address location="http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx" />
+    </wsdl:port>
+    <wsdl:port name="multiBankSoap12" binding="tns:multiBankSoap12">
+      <soap12:address location="http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx" />
+    </wsdl:port>
+    <wsdl:port name="multiBankHttpGet" binding="tns:multiBankHttpGet">
+      <http:address location="http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx" />
+    </wsdl:port>
+    <wsdl:port name="multiBankHttpPost" binding="tns:multiBankHttpPost">
+      <http:address location="http://localhost/MW.MComm.GanaderoSim.WebService/multiBank.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

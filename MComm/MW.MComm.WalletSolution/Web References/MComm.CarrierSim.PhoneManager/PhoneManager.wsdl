@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager" xmlns:s1="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager">
+      <s:import namespace="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes" />
+      <s:element name="DeleteOnePhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="s1:Phone" />
+            <s:element minOccurs="1" maxOccurs="1" name="performCascadeOperation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOnePhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteOnePhoneResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllPhoneDataByCustomerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllPhoneDataByCustomerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAllPhoneDataByCustomerIDResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnePhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnePhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnePhoneResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPhoneDataResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneDataByCustomerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneDataByCustomerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPhoneDataByCustomerIDResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneDataByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPhoneDataByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPhoneDataByCriteriaResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManyPhoneDataByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maximumListSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManyPhoneDataByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManyPhoneDataByCriteriaResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpsertOnePhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="s1:Phone" />
+            <s:element minOccurs="1" maxOccurs="1" name="performCascadeOperation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpsertOnePhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpsertOnePhoneResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnePhoneByPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnePhoneByPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnePhoneByPhoneNumberResult" type="s1:PhoneResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PhoneResults" nillable="true" type="s1:PhoneResults" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="Phone">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:PersistedBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PhoneNumber" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="Balance" type="s:float" />
+              <s:element minOccurs="1" maxOccurs="1" name="PhoneID" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="Name" nillable="true" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueBalance" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueLockedBalance" type="s:float" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PersistedBusinessObject">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedByUserID" nillable="true" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedByUserID" nillable="true" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Timestamp" nillable="true" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObject" />
+      <s:complexType name="PhoneResults">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:StatusObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Results" type="s1:ArrayOfPhone" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StatusObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" default="" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRecords" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximumListSizeExceeded" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Phone" nillable="true" type="s1:Phone" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteOnePhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOnePhone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOnePhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOnePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllPhoneDataByCustomerID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllPhoneDataByCustomerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnePhone" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneDataByCustomerID" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneDataByCustomerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneDataByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPhoneDataByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManyPhoneDataByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManyPhoneDataByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpsertOnePhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:UpsertOnePhone" />
+  </wsdl:message>
+  <wsdl:message name="UpsertOnePhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:UpsertOnePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnePhoneByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnePhoneByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDHttpGetIn">
+    <wsdl:part name="customerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneHttpGetIn">
+    <wsdl:part name="phoneID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataHttpGetIn">
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDHttpGetIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaHttpGetIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaHttpGetIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="startIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="maximumListSize" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberHttpGetIn">
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDHttpPostIn">
+    <wsdl:part name="customerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllPhoneDataByCustomerIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneHttpPostIn">
+    <wsdl:part name="phoneID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataHttpPostIn">
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDHttpPostIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCustomerIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaHttpPostIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPhoneDataByCriteriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaHttpPostIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="startIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="maximumListSize" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManyPhoneDataByCriteriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberHttpPostIn">
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnePhoneByPhoneNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:PhoneResults" />
+  </wsdl:message>
+  <wsdl:portType name="PhoneManagerSoap">
+    <wsdl:operation name="DeleteOnePhone">
+      <wsdl:input message="tns:DeleteOnePhoneSoapIn" />
+      <wsdl:output message="tns:DeleteOnePhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:DeleteAllPhoneDataByCustomerIDSoapIn" />
+      <wsdl:output message="tns:DeleteAllPhoneDataByCustomerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <wsdl:input message="tns:GetOnePhoneSoapIn" />
+      <wsdl:output message="tns:GetOnePhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <wsdl:input message="tns:GetAllPhoneDataSoapIn" />
+      <wsdl:output message="tns:GetAllPhoneDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:GetAllPhoneDataByCustomerIDSoapIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCustomerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <wsdl:input message="tns:GetAllPhoneDataByCriteriaSoapIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <wsdl:input message="tns:GetManyPhoneDataByCriteriaSoapIn" />
+      <wsdl:output message="tns:GetManyPhoneDataByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpsertOnePhone">
+      <wsdl:input message="tns:UpsertOnePhoneSoapIn" />
+      <wsdl:output message="tns:UpsertOnePhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <wsdl:input message="tns:GetOnePhoneByPhoneNumberSoapIn" />
+      <wsdl:output message="tns:GetOnePhoneByPhoneNumberSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PhoneManagerHttpGet">
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:DeleteAllPhoneDataByCustomerIDHttpGetIn" />
+      <wsdl:output message="tns:DeleteAllPhoneDataByCustomerIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <wsdl:input message="tns:GetOnePhoneHttpGetIn" />
+      <wsdl:output message="tns:GetOnePhoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <wsdl:input message="tns:GetAllPhoneDataHttpGetIn" />
+      <wsdl:output message="tns:GetAllPhoneDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:GetAllPhoneDataByCustomerIDHttpGetIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCustomerIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <wsdl:input message="tns:GetAllPhoneDataByCriteriaHttpGetIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCriteriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <wsdl:input message="tns:GetManyPhoneDataByCriteriaHttpGetIn" />
+      <wsdl:output message="tns:GetManyPhoneDataByCriteriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <wsdl:input message="tns:GetOnePhoneByPhoneNumberHttpGetIn" />
+      <wsdl:output message="tns:GetOnePhoneByPhoneNumberHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PhoneManagerHttpPost">
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:DeleteAllPhoneDataByCustomerIDHttpPostIn" />
+      <wsdl:output message="tns:DeleteAllPhoneDataByCustomerIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <wsdl:input message="tns:GetOnePhoneHttpPostIn" />
+      <wsdl:output message="tns:GetOnePhoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <wsdl:input message="tns:GetAllPhoneDataHttpPostIn" />
+      <wsdl:output message="tns:GetAllPhoneDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <wsdl:input message="tns:GetAllPhoneDataByCustomerIDHttpPostIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCustomerIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <wsdl:input message="tns:GetAllPhoneDataByCriteriaHttpPostIn" />
+      <wsdl:output message="tns:GetAllPhoneDataByCriteriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <wsdl:input message="tns:GetManyPhoneDataByCriteriaHttpPostIn" />
+      <wsdl:output message="tns:GetManyPhoneDataByCriteriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <wsdl:input message="tns:GetOnePhoneByPhoneNumberHttpPostIn" />
+      <wsdl:output message="tns:GetOnePhoneByPhoneNumberHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PhoneManagerSoap" type="tns:PhoneManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteOnePhone">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/DeleteOnePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/DeleteAllPhoneDataByCustomerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetOnePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneDataByCustomerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetManyPhoneDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertOnePhone">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/UpsertOnePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetOnePhoneByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PhoneManagerSoap12" type="tns:PhoneManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteOnePhone">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/DeleteOnePhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/DeleteAllPhoneDataByCustomerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetOnePhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneDataByCustomerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetAllPhoneDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetManyPhoneDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertOnePhone">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/UpsertOnePhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/PhoneManager/GetOnePhoneByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PhoneManagerHttpGet" type="tns:PhoneManagerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <http:operation location="/DeleteAllPhoneDataByCustomerID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <http:operation location="/GetOnePhone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <http:operation location="/GetAllPhoneData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <http:operation location="/GetAllPhoneDataByCustomerID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <http:operation location="/GetAllPhoneDataByCriteria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <http:operation location="/GetManyPhoneDataByCriteria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <http:operation location="/GetOnePhoneByPhoneNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PhoneManagerHttpPost" type="tns:PhoneManagerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DeleteAllPhoneDataByCustomerID">
+      <http:operation location="/DeleteAllPhoneDataByCustomerID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhone">
+      <http:operation location="/GetOnePhone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneData">
+      <http:operation location="/GetAllPhoneData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCustomerID">
+      <http:operation location="/GetAllPhoneDataByCustomerID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhoneDataByCriteria">
+      <http:operation location="/GetAllPhoneDataByCriteria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyPhoneDataByCriteria">
+      <http:operation location="/GetManyPhoneDataByCriteria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnePhoneByPhoneNumber">
+      <http:operation location="/GetOnePhoneByPhoneNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhoneManager">
+    <wsdl:port name="PhoneManagerSoap" binding="tns:PhoneManagerSoap">
+      <soap:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PhoneManagerSoap12" binding="tns:PhoneManagerSoap12">
+      <soap12:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PhoneManagerHttpGet" binding="tns:PhoneManagerHttpGet">
+      <http:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PhoneManagerHttpPost" binding="tns:PhoneManagerHttpPost">
+      <http:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/PhoneManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

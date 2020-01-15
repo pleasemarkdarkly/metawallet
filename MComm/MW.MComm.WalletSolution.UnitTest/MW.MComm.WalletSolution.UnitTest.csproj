@@ -1,0 +1,612 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{492952D1-79EB-478F-8006-62A6018539A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MW.MComm.WalletSolution.UnitTest</RootNamespace>
+    <AssemblyName>MW.MComm.WalletSolution.UnitTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MbUnit.AddIn, Version=1.0.2700.29887, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\MbUnit\MbUnit.AddIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=1.0.2700.29885, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\MbUnit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Logging.Database.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\mod\Common\Libraries\DotNet2.0\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountAttributeValue_Manager.cs" />
+    <Compile Include="Accounts\AccountAttributeValue_Manager_Ext.cs" />
+    <Compile Include="Accounts\AccountAttributeValue_TestBasic.cs" />
+    <Compile Include="Accounts\AccountAttributeValue_TestPerformance.cs" />
+    <Compile Include="Accounts\AccountAttributeValue_TestSearch.cs" />
+    <Compile Include="Accounts\AccountAttribute_Manager.cs" />
+    <Compile Include="Accounts\AccountAttribute_Manager_Ext.cs" />
+    <Compile Include="Accounts\AccountAttribute_TestBasic.cs" />
+    <Compile Include="Accounts\AccountAttribute_TestPerformance.cs" />
+    <Compile Include="Accounts\AccountAttribute_TestSearch.cs" />
+    <Compile Include="Accounts\AccountSubType_Manager.cs" />
+    <Compile Include="Accounts\AccountSubType_Manager_Ext.cs" />
+    <Compile Include="Accounts\AccountSubType_TestBasic.cs" />
+    <Compile Include="Accounts\AccountSubType_TestPerformance.cs" />
+    <Compile Include="Accounts\AccountSubType_TestSearch.cs" />
+    <Compile Include="Accounts\Account_Manager.cs" />
+    <Compile Include="Accounts\Account_Manager_Ext.cs" />
+    <Compile Include="Accounts\Account_TestBasic.cs" />
+    <Compile Include="Accounts\Account_TestPerformance.cs" />
+    <Compile Include="Accounts\Account_TestSearch.cs" />
+    <Compile Include="Accounts\BankAccount_Manager.cs" />
+    <Compile Include="Accounts\BankAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\BankAccount_TestBasic.cs" />
+    <Compile Include="Accounts\BankAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\BankAccount_TestSearch.cs" />
+    <Compile Include="Accounts\BillPayAccount_Manager.cs" />
+    <Compile Include="Accounts\BillPayAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\BillPayAccount_TestBasic.cs" />
+    <Compile Include="Accounts\BillPayAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\BillPayAccount_TestSearch.cs" />
+    <Compile Include="Accounts\CreditAccount_Manager.cs" />
+    <Compile Include="Accounts\CreditAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\CreditAccount_TestBasic.cs" />
+    <Compile Include="Accounts\CreditAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\CreditAccount_TestSearch.cs" />
+    <Compile Include="Accounts\CreditCardType_Manager.cs" />
+    <Compile Include="Accounts\CreditCardType_Manager_Ext.cs" />
+    <Compile Include="Accounts\CreditCardType_TestBasic.cs" />
+    <Compile Include="Accounts\CreditCardType_TestPerformance.cs" />
+    <Compile Include="Accounts\CreditCardType_TestSearch.cs" />
+    <Compile Include="Accounts\CurrencyConversion_Manager.cs" />
+    <Compile Include="Accounts\CurrencyConversion_Manager_Ext.cs" />
+    <Compile Include="Accounts\CurrencyConversion_TestBasic.cs" />
+    <Compile Include="Accounts\CurrencyConversion_TestPerformance.cs" />
+    <Compile Include="Accounts\CurrencyConversion_TestSearch.cs" />
+    <Compile Include="Accounts\Currency_Manager.cs" />
+    <Compile Include="Accounts\Currency_Manager_Ext.cs" />
+    <Compile Include="Accounts\Currency_TestBasic.cs" />
+    <Compile Include="Accounts\Currency_TestPerformance.cs" />
+    <Compile Include="Accounts\Currency_TestSearch.cs" />
+    <Compile Include="Accounts\DebitAccount_Manager.cs" />
+    <Compile Include="Accounts\DebitAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\DebitAccount_TestBasic.cs" />
+    <Compile Include="Accounts\DebitAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\DebitAccount_TestSearch.cs" />
+    <Compile Include="Accounts\ExternalAccount_Manager.cs" />
+    <Compile Include="Accounts\ExternalAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\ExternalAccount_TestBasic.cs" />
+    <Compile Include="Accounts\ExternalAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\ExternalAccount_TestSearch.cs" />
+    <Compile Include="Accounts\Frequency_Manager.cs" />
+    <Compile Include="Accounts\Frequency_Manager_Ext.cs" />
+    <Compile Include="Accounts\Frequency_TestBasic.cs" />
+    <Compile Include="Accounts\Frequency_TestPerformance.cs" />
+    <Compile Include="Accounts\Frequency_TestSearch.cs" />
+    <Compile Include="Accounts\FundAccountType_Manager.cs" />
+    <Compile Include="Accounts\FundAccountType_Manager_Ext.cs" />
+    <Compile Include="Accounts\FundAccountType_TestBasic.cs" />
+    <Compile Include="Accounts\FundAccountType_TestPerformance.cs" />
+    <Compile Include="Accounts\FundAccountType_TestSearch.cs" />
+    <Compile Include="Accounts\FundAccount_Manager.cs" />
+    <Compile Include="Accounts\FundAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\FundAccount_TestBasic.cs" />
+    <Compile Include="Accounts\FundAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\FundAccount_TestSearch.cs" />
+    <Compile Include="Accounts\LoanAccount_Manager.cs" />
+    <Compile Include="Accounts\LoanAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\LoanAccount_TestBasic.cs" />
+    <Compile Include="Accounts\LoanAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\LoanAccount_TestSearch.cs" />
+    <Compile Include="Accounts\LoanToMetaPartner_Manager.cs" />
+    <Compile Include="Accounts\LoanToMetaPartner_Manager_Ext.cs" />
+    <Compile Include="Accounts\MetaTransferAccount_Manager.cs" />
+    <Compile Include="Accounts\MetaTransferAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\MetaTransferAccount_TestBasic.cs" />
+    <Compile Include="Accounts\MetaTransferAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\MetaTransferAccount_TestSearch.cs" />
+    <Compile Include="Accounts\ParticipatingPartner_Manager.cs" />
+    <Compile Include="Accounts\ParticipatingPartner_Manager_Ext.cs" />
+    <Compile Include="Accounts\PaymentInstitution_Manager.cs" />
+    <Compile Include="Accounts\PaymentInstitution_Manager_Ext.cs" />
+    <Compile Include="Accounts\PaymentInstitution_TestBasic.cs" />
+    <Compile Include="Accounts\PaymentInstitution_TestPerformance.cs" />
+    <Compile Include="Accounts\PaymentInstitution_TestSearch.cs" />
+    <Compile Include="Accounts\StoredValueAccount_Manager.cs" />
+    <Compile Include="Accounts\StoredValueAccount_Manager_Ext.cs" />
+    <Compile Include="Accounts\StoredValueAccount_TestBasic.cs" />
+    <Compile Include="Accounts\StoredValueAccount_TestPerformance.cs" />
+    <Compile Include="Accounts\StoredValueAccount_TestSearch.cs" />
+    <Compile Include="BaseUnitTest.cs" />
+    <Compile Include="Core\AttributeType_Manager.cs" />
+    <Compile Include="Core\AttributeType_Manager_Ext.cs" />
+    <Compile Include="Core\AttributeType_TestBasic.cs" />
+    <Compile Include="Core\AttributeType_TestPerformance.cs" />
+    <Compile Include="Core\AttributeType_TestSearch.cs" />
+    <Compile Include="Core\BaseAttribute_Manager.cs" />
+    <Compile Include="Core\BaseAttribute_Manager_Ext.cs" />
+    <Compile Include="Core\BaseAttribute_TestBasic.cs" />
+    <Compile Include="Core\BaseAttribute_TestPerformance.cs" />
+    <Compile Include="Core\BaseAttribute_TestSearch.cs" />
+    <Compile Include="Core\DataType_Manager.cs" />
+    <Compile Include="Core\DataType_Manager_Ext.cs" />
+    <Compile Include="Core\DataType_TestBasic.cs" />
+    <Compile Include="Core\DataType_TestPerformance.cs" />
+    <Compile Include="Core\DataType_TestSearch.cs" />
+    <Compile Include="Core\DebugAttributeValueLog_Manager.cs" />
+    <Compile Include="Core\DebugAttributeValueLog_Manager_Ext.cs" />
+    <Compile Include="Core\DebugAttributeValueLog_TestBasic.cs" />
+    <Compile Include="Core\DebugAttributeValueLog_TestPerformance.cs" />
+    <Compile Include="Core\DebugAttributeValueLog_TestSearch.cs" />
+    <Compile Include="Core\DebugAttribute_Manager.cs" />
+    <Compile Include="Core\DebugAttribute_Manager_Ext.cs" />
+    <Compile Include="Core\DebugAttribute_TestBasic.cs" />
+    <Compile Include="Core\DebugAttribute_TestPerformance.cs" />
+    <Compile Include="Core\DebugAttribute_TestSearch.cs" />
+    <Compile Include="Core\DebugLog_Manager.cs" />
+    <Compile Include="Core\DebugLog_Manager_Ext.cs" />
+    <Compile Include="Core\DebugLog_TestBasic.cs" />
+    <Compile Include="Core\DebugLog_TestPerformance.cs" />
+    <Compile Include="Core\DebugLog_TestSearch.cs" />
+    <Compile Include="Core\Error_Manager.cs" />
+    <Compile Include="Core\Error_Manager_Ext.cs" />
+    <Compile Include="Core\Error_TestBasic.cs" />
+    <Compile Include="Core\Error_TestPerformance.cs" />
+    <Compile Include="Core\Error_TestSearch.cs" />
+    <Compile Include="Core\EventType_Manager.cs" />
+    <Compile Include="Core\EventType_Manager_Ext.cs" />
+    <Compile Include="Core\EventType_TestBasic.cs" />
+    <Compile Include="Core\EventType_TestPerformance.cs" />
+    <Compile Include="Core\EventType_TestSearch.cs" />
+    <Compile Include="Core\SeverityLevel_Manager.cs" />
+    <Compile Include="Core\SeverityLevel_Manager_Ext.cs" />
+    <Compile Include="Core\SeverityLevel_TestBasic.cs" />
+    <Compile Include="Core\SeverityLevel_TestPerformance.cs" />
+    <Compile Include="Core\SeverityLevel_TestSearch.cs" />
+    <Compile Include="Customers\Bank_Manager.cs" />
+    <Compile Include="Customers\Bank_Manager_Ext.cs" />
+    <Compile Include="Customers\Bank_TestBasic.cs" />
+    <Compile Include="Customers\Bank_TestPerformance.cs" />
+    <Compile Include="Customers\Bank_TestSearch.cs" />
+    <Compile Include="Customers\BusinessCustomer_Manager.cs" />
+    <Compile Include="Customers\BusinessCustomer_Manager_Ext.cs" />
+    <Compile Include="Customers\Business_Manager.cs" />
+    <Compile Include="Customers\Business_Manager_Ext.cs" />
+    <Compile Include="Customers\Business_TestBasic.cs" />
+    <Compile Include="Customers\Business_TestPerformance.cs" />
+    <Compile Include="Customers\Business_TestSearch.cs" />
+    <Compile Include="Customers\Carrier_Manager.cs" />
+    <Compile Include="Customers\Carrier_Manager_Ext.cs" />
+    <Compile Include="Customers\Carrier_TestBasic.cs" />
+    <Compile Include="Customers\Carrier_TestPerformance.cs" />
+    <Compile Include="Customers\Carrier_TestSearch.cs" />
+    <Compile Include="Customers\Customer_Manager.cs" />
+    <Compile Include="Customers\Customer_Manager_Ext.cs" />
+    <Compile Include="Customers\Customer_TestBasic.cs" />
+    <Compile Include="Customers\Customer_TestPerformance.cs" />
+    <Compile Include="Customers\Customer_TestSearch.cs" />
+    <Compile Include="Customers\LocationType_Manager.cs" />
+    <Compile Include="Customers\LocationType_Manager_Ext.cs" />
+    <Compile Include="Customers\LocationType_TestBasic.cs" />
+    <Compile Include="Customers\LocationType_TestPerformance.cs" />
+    <Compile Include="Customers\LocationType_TestSearch.cs" />
+    <Compile Include="Customers\Location_Manager.cs" />
+    <Compile Include="Customers\Location_Manager_Ext.cs" />
+    <Compile Include="Customers\Location_TestBasic.cs" />
+    <Compile Include="Customers\Location_TestPerformance.cs" />
+    <Compile Include="Customers\Location_TestSearch.cs" />
+    <Compile Include="Customers\Merchant_Manager.cs" />
+    <Compile Include="Customers\Merchant_Manager_Ext.cs" />
+    <Compile Include="Customers\Merchant_TestBasic.cs" />
+    <Compile Include="Customers\Merchant_TestPerformance.cs" />
+    <Compile Include="Customers\Merchant_TestSearch.cs" />
+    <Compile Include="Customers\MetaPartnerContact_Manager.cs" />
+    <Compile Include="Customers\MetaPartnerContact_Manager_Ext.cs" />
+    <Compile Include="Customers\MetaPartnerEmail_Manager.cs" />
+    <Compile Include="Customers\MetaPartnerEmail_Manager_Ext.cs" />
+    <Compile Include="Customers\MetaPartnerEmail_TestBasic.cs" />
+    <Compile Include="Customers\MetaPartnerEmail_TestPerformance.cs" />
+    <Compile Include="Customers\MetaPartnerEmail_TestSearch.cs" />
+    <Compile Include="Customers\MetaPartnerPhone_Manager.cs" />
+    <Compile Include="Customers\MetaPartnerPhone_Manager_Ext.cs" />
+    <Compile Include="Customers\MetaPartnerPhone_TestBasic.cs" />
+    <Compile Include="Customers\MetaPartnerPhone_TestPerformance.cs" />
+    <Compile Include="Customers\MetaPartnerPhone_TestSearch.cs" />
+    <Compile Include="Customers\MetaPartnerSubType_Manager.cs" />
+    <Compile Include="Customers\MetaPartnerSubType_Manager_Ext.cs" />
+    <Compile Include="Customers\MetaPartnerSubType_TestBasic.cs" />
+    <Compile Include="Customers\MetaPartnerSubType_TestPerformance.cs" />
+    <Compile Include="Customers\MetaPartnerSubType_TestSearch.cs" />
+    <Compile Include="Customers\MetaPartner_Manager.cs" />
+    <Compile Include="Customers\MetaPartner_Manager_Ext.cs" />
+    <Compile Include="Customers\MetaPartner_TestBasic.cs" />
+    <Compile Include="Customers\MetaPartner_TestPerformance.cs" />
+    <Compile Include="Customers\MetaPartner_TestSearch.cs" />
+    <Compile Include="Customers\ResellerType_Manager.cs" />
+    <Compile Include="Customers\ResellerType_Manager_Ext.cs" />
+    <Compile Include="Customers\ResellerType_TestBasic.cs" />
+    <Compile Include="Customers\ResellerType_TestPerformance.cs" />
+    <Compile Include="Customers\ResellerType_TestSearch.cs" />
+    <Compile Include="Customers\Reseller_Manager.cs" />
+    <Compile Include="Customers\Reseller_Manager_Ext.cs" />
+    <Compile Include="Customers\Reseller_TestBasic.cs" />
+    <Compile Include="Customers\Reseller_TestPerformance.cs" />
+    <Compile Include="Customers\Reseller_TestSearch.cs" />
+    <Compile Include="Environments\Country_Manager.cs" />
+    <Compile Include="Environments\Country_Manager_Ext.cs" />
+    <Compile Include="Environments\Country_TestBasic.cs" />
+    <Compile Include="Environments\Country_TestPerformance.cs" />
+    <Compile Include="Environments\Country_TestSearch.cs" />
+    <Compile Include="Environments\DateFormat_Manager.cs" />
+    <Compile Include="Environments\DateFormat_Manager_Ext.cs" />
+    <Compile Include="Environments\DateFormat_TestBasic.cs" />
+    <Compile Include="Environments\DateFormat_TestPerformance.cs" />
+    <Compile Include="Environments\DateFormat_TestSearch.cs" />
+    <Compile Include="Environments\Locale_Manager.cs" />
+    <Compile Include="Environments\Locale_Manager_Ext.cs" />
+    <Compile Include="Environments\Locale_TestBasic.cs" />
+    <Compile Include="Environments\Locale_TestPerformance.cs" />
+    <Compile Include="Environments\Locale_TestSearch.cs" />
+    <Compile Include="Events\AuditAttributeValueLog_Manager.cs" />
+    <Compile Include="Events\AuditAttributeValueLog_Manager_Ext.cs" />
+    <Compile Include="Events\AuditAttributeValueLog_TestBasic.cs" />
+    <Compile Include="Events\AuditAttributeValueLog_TestPerformance.cs" />
+    <Compile Include="Events\AuditAttributeValueLog_TestSearch.cs" />
+    <Compile Include="Events\AuditLog_Manager.cs" />
+    <Compile Include="Events\AuditLog_Manager_Ext.cs" />
+    <Compile Include="Events\AuditLog_TestBasic.cs" />
+    <Compile Include="Events\AuditLog_TestPerformance.cs" />
+    <Compile Include="Events\AuditLog_TestSearch.cs" />
+    <Compile Include="Events\EventAttribute_Manager.cs" />
+    <Compile Include="Events\EventAttribute_Manager_Ext.cs" />
+    <Compile Include="Events\EventAttribute_TestBasic.cs" />
+    <Compile Include="Events\EventAttribute_TestPerformance.cs" />
+    <Compile Include="Events\EventAttribute_TestSearch.cs" />
+    <Compile Include="Events\EventFee_Manager.cs" />
+    <Compile Include="Events\EventFee_Manager_Ext.cs" />
+    <Compile Include="Events\EventPromotion_Manager.cs" />
+    <Compile Include="Events\EventPromotion_Manager_Ext.cs" />
+    <Compile Include="Events\EventType_Manager.cs" />
+    <Compile Include="Events\EventType_Manager_Ext.cs" />
+    <Compile Include="Events\EventType_TestBasic.cs" />
+    <Compile Include="Events\EventType_TestPerformance.cs" />
+    <Compile Include="Events\EventType_TestSearch.cs" />
+    <Compile Include="Events\Event_Manager.cs" />
+    <Compile Include="Events\Event_Manager_Ext.cs" />
+    <Compile Include="Events\Event_TestBasic.cs" />
+    <Compile Include="Events\Event_TestPerformance.cs" />
+    <Compile Include="Events\Event_TestSearch.cs" />
+    <Compile Include="Events\SpecificEventAttribute_Manager.cs" />
+    <Compile Include="Events\SpecificEventAttribute_Manager_Ext.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Notifications\NotificationAttributeValueLog_Manager.cs" />
+    <Compile Include="Notifications\NotificationAttributeValueLog_Manager_Ext.cs" />
+    <Compile Include="Notifications\NotificationAttributeValueLog_TestBasic.cs" />
+    <Compile Include="Notifications\NotificationAttributeValueLog_TestPerformance.cs" />
+    <Compile Include="Notifications\NotificationAttributeValueLog_TestSearch.cs" />
+    <Compile Include="Notifications\NotificationDeliveryLog_Manager.cs" />
+    <Compile Include="Notifications\NotificationDeliveryLog_Manager_Ext.cs" />
+    <Compile Include="Notifications\NotificationDeliveryType_Manager.cs" />
+    <Compile Include="Notifications\NotificationDeliveryType_Manager_Ext.cs" />
+    <Compile Include="Notifications\NotificationDeliveryType_TestBasic.cs" />
+    <Compile Include="Notifications\NotificationDeliveryType_TestPerformance.cs" />
+    <Compile Include="Notifications\NotificationDeliveryType_TestSearch.cs" />
+    <Compile Include="Notifications\NotificationLog_Manager.cs" />
+    <Compile Include="Notifications\NotificationLog_Manager_Ext.cs" />
+    <Compile Include="Notifications\NotificationLog_TestBasic.cs" />
+    <Compile Include="Notifications\NotificationLog_TestPerformance.cs" />
+    <Compile Include="Notifications\NotificationLog_TestSearch.cs" />
+    <Compile Include="Notifications\NotificationTemplate_Manager.cs" />
+    <Compile Include="Notifications\NotificationTemplate_Manager_Ext.cs" />
+    <Compile Include="Notifications\NotificationTemplate_TestBasic.cs" />
+    <Compile Include="Notifications\NotificationTemplate_TestPerformance.cs" />
+    <Compile Include="Notifications\NotificationTemplate_TestSearch.cs" />
+    <Compile Include="Notifications\Notification_Manager.cs" />
+    <Compile Include="Notifications\Notification_Manager_Ext.cs" />
+    <Compile Include="Notifications\Notification_TestBasic.cs" />
+    <Compile Include="Notifications\Notification_TestPerformance.cs" />
+    <Compile Include="Notifications\Notification_TestSearch.cs" />
+    <Compile Include="Orders\OrderCoupon_Manager.cs" />
+    <Compile Include="Orders\OrderCoupon_Manager_Ext.cs" />
+    <Compile Include="Orders\OrderFee_Manager.cs" />
+    <Compile Include="Orders\OrderFee_Manager_Ext.cs" />
+    <Compile Include="Orders\OrderStatus_Manager.cs" />
+    <Compile Include="Orders\OrderStatus_Manager_Ext.cs" />
+    <Compile Include="Orders\OrderStatus_TestBasic.cs" />
+    <Compile Include="Orders\OrderStatus_TestPerformance.cs" />
+    <Compile Include="Orders\OrderStatus_TestSearch.cs" />
+    <Compile Include="Orders\Order_Manager.cs" />
+    <Compile Include="Orders\Order_Manager_Ext.cs" />
+    <Compile Include="Orders\Order_TestBasic.cs" />
+    <Compile Include="Orders\Order_TestPerformance.cs" />
+    <Compile Include="Orders\Order_TestSearch.cs" />
+    <Compile Include="Payments\FeeType_Manager.cs" />
+    <Compile Include="Payments\FeeType_Manager_Ext.cs" />
+    <Compile Include="Payments\FeeType_TestBasic.cs" />
+    <Compile Include="Payments\FeeType_TestPerformance.cs" />
+    <Compile Include="Payments\FeeType_TestSearch.cs" />
+    <Compile Include="Payments\Fee_Manager.cs" />
+    <Compile Include="Payments\Fee_Manager_Ext.cs" />
+    <Compile Include="Payments\Fee_TestBasic.cs" />
+    <Compile Include="Payments\Fee_TestPerformance.cs" />
+    <Compile Include="Payments\Fee_TestSearch.cs" />
+    <Compile Include="Payments\PaymentStatus_Manager.cs" />
+    <Compile Include="Payments\PaymentStatus_Manager_Ext.cs" />
+    <Compile Include="Payments\PaymentStatus_TestBasic.cs" />
+    <Compile Include="Payments\PaymentStatus_TestPerformance.cs" />
+    <Compile Include="Payments\PaymentStatus_TestSearch.cs" />
+    <Compile Include="Payments\PaymentTransactionAttributeValueLog_Manager.cs" />
+    <Compile Include="Payments\PaymentTransactionAttributeValueLog_Manager_Ext.cs" />
+    <Compile Include="Payments\PaymentTransactionAttributeValueLog_TestBasic.cs" />
+    <Compile Include="Payments\PaymentTransactionAttributeValueLog_TestPerformance.cs" />
+    <Compile Include="Payments\PaymentTransactionAttributeValueLog_TestSearch.cs" />
+    <Compile Include="Payments\PaymentTransactionLog_Manager.cs" />
+    <Compile Include="Payments\PaymentTransactionLog_Manager_Ext.cs" />
+    <Compile Include="Payments\PaymentTransactionLog_TestBasic.cs" />
+    <Compile Include="Payments\PaymentTransactionLog_TestPerformance.cs" />
+    <Compile Include="Payments\PaymentTransactionLog_TestSearch.cs" />
+    <Compile Include="Payments\Payment_Manager.cs" />
+    <Compile Include="Payments\Payment_Manager_Ext.cs" />
+    <Compile Include="Payments\Payment_TestBasic.cs" />
+    <Compile Include="Payments\Payment_TestPerformance.cs" />
+    <Compile Include="Payments\Payment_TestSearch.cs" />
+    <Compile Include="Payments\TransactionStatus_Manager.cs" />
+    <Compile Include="Payments\TransactionStatus_Manager_Ext.cs" />
+    <Compile Include="Payments\TransactionStatus_TestBasic.cs" />
+    <Compile Include="Payments\TransactionStatus_TestPerformance.cs" />
+    <Compile Include="Payments\TransactionStatus_TestSearch.cs" />
+    <Compile Include="Payments\TransactionType_Manager.cs" />
+    <Compile Include="Payments\TransactionType_Manager_Ext.cs" />
+    <Compile Include="Payments\TransactionType_TestBasic.cs" />
+    <Compile Include="Payments\TransactionType_TestPerformance.cs" />
+    <Compile Include="Payments\TransactionType_TestSearch.cs" />
+    <Compile Include="Promotions\CouponType_Manager.cs" />
+    <Compile Include="Promotions\CouponType_Manager_Ext.cs" />
+    <Compile Include="Promotions\CouponType_TestBasic.cs" />
+    <Compile Include="Promotions\CouponType_TestPerformance.cs" />
+    <Compile Include="Promotions\CouponType_TestSearch.cs" />
+    <Compile Include="Promotions\Coupon_Manager.cs" />
+    <Compile Include="Promotions\Coupon_Manager_Ext.cs" />
+    <Compile Include="Promotions\Coupon_TestBasic.cs" />
+    <Compile Include="Promotions\Coupon_TestPerformance.cs" />
+    <Compile Include="Promotions\Coupon_TestSearch.cs" />
+    <Compile Include="Promotions\DiscountType_Manager.cs" />
+    <Compile Include="Promotions\DiscountType_Manager_Ext.cs" />
+    <Compile Include="Promotions\DiscountType_TestBasic.cs" />
+    <Compile Include="Promotions\DiscountType_TestPerformance.cs" />
+    <Compile Include="Promotions\DiscountType_TestSearch.cs" />
+    <Compile Include="Promotions\MetaPartnerCoupon_Manager.cs" />
+    <Compile Include="Promotions\MetaPartnerCoupon_Manager_Ext.cs" />
+    <Compile Include="Promotions\MetaPartnerCoupon_TestBasic.cs" />
+    <Compile Include="Promotions\MetaPartnerCoupon_TestPerformance.cs" />
+    <Compile Include="Promotions\MetaPartnerCoupon_TestSearch.cs" />
+    <Compile Include="Promotions\PromotionCoupon_Manager.cs" />
+    <Compile Include="Promotions\PromotionCoupon_Manager_Ext.cs" />
+    <Compile Include="Promotions\PromotionType_Manager.cs" />
+    <Compile Include="Promotions\PromotionType_Manager_Ext.cs" />
+    <Compile Include="Promotions\PromotionType_TestBasic.cs" />
+    <Compile Include="Promotions\PromotionType_TestPerformance.cs" />
+    <Compile Include="Promotions\PromotionType_TestSearch.cs" />
+    <Compile Include="Promotions\Promotion_Manager.cs" />
+    <Compile Include="Promotions\Promotion_Manager_Ext.cs" />
+    <Compile Include="Promotions\Promotion_TestBasic.cs" />
+    <Compile Include="Promotions\Promotion_TestPerformance.cs" />
+    <Compile Include="Promotions\Promotion_TestSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserExperience\AdminHelp_Manager.cs" />
+    <Compile Include="UserExperience\AdminHelp_Manager_Ext.cs" />
+    <Compile Include="UserExperience\AdminHelp_TestBasic.cs" />
+    <Compile Include="UserExperience\AdminHelp_TestPerformance.cs" />
+    <Compile Include="UserExperience\AdminHelp_TestSearch.cs" />
+    <Compile Include="UserExperience\FriendlyError_Manager.cs" />
+    <Compile Include="UserExperience\FriendlyError_Manager_Ext.cs" />
+    <Compile Include="UserExperience\FriendlyError_TestBasic.cs" />
+    <Compile Include="UserExperience\FriendlyError_TestPerformance.cs" />
+    <Compile Include="UserExperience\FriendlyError_TestSearch.cs" />
+    <Compile Include="UserExperience\SiteHelpDefinition_Manager.cs" />
+    <Compile Include="UserExperience\SiteHelpDefinition_Manager_Ext.cs" />
+    <Compile Include="UserExperience\SiteHelpDefinition_TestBasic.cs" />
+    <Compile Include="UserExperience\SiteHelpDefinition_TestPerformance.cs" />
+    <Compile Include="UserExperience\SiteHelpDefinition_TestSearch.cs" />
+    <Compile Include="UserExperience\SiteHelpGroup_Manager.cs" />
+    <Compile Include="UserExperience\SiteHelpGroup_Manager_Ext.cs" />
+    <Compile Include="UserExperience\SiteHelpGroup_TestBasic.cs" />
+    <Compile Include="UserExperience\SiteHelpGroup_TestPerformance.cs" />
+    <Compile Include="UserExperience\SiteHelpGroup_TestSearch.cs" />
+    <Compile Include="UserExperience\SiteHelp_Manager.cs" />
+    <Compile Include="UserExperience\SiteHelp_Manager_Ext.cs" />
+    <Compile Include="UserExperience\SiteHelp_TestBasic.cs" />
+    <Compile Include="UserExperience\SiteHelp_TestPerformance.cs" />
+    <Compile Include="UserExperience\SiteHelp_TestSearch.cs" />
+    <Compile Include="UserExperience\SiteLabelDefinition_Manager.cs" />
+    <Compile Include="UserExperience\SiteLabelDefinition_Manager_Ext.cs" />
+    <Compile Include="UserExperience\SiteLabelDefinition_TestBasic.cs" />
+    <Compile Include="UserExperience\SiteLabelDefinition_TestPerformance.cs" />
+    <Compile Include="UserExperience\SiteLabelDefinition_TestSearch.cs" />
+    <Compile Include="UserExperience\SiteLabel_Manager.cs" />
+    <Compile Include="UserExperience\SiteLabel_Manager_Ext.cs" />
+    <Compile Include="UserExperience\SiteLabel_TestBasic.cs" />
+    <Compile Include="UserExperience\SiteLabel_TestPerformance.cs" />
+    <Compile Include="UserExperience\SiteLabel_TestSearch.cs" />
+    <Compile Include="Users\AccessMode_Manager.cs" />
+    <Compile Include="Users\AccessMode_Manager_Ext.cs" />
+    <Compile Include="Users\AccessMode_TestBasic.cs" />
+    <Compile Include="Users\AccessMode_TestPerformance.cs" />
+    <Compile Include="Users\AccessMode_TestSearch.cs" />
+    <Compile Include="Users\Activity_Manager.cs" />
+    <Compile Include="Users\Activity_Manager_Ext.cs" />
+    <Compile Include="Users\Activity_TestBasic.cs" />
+    <Compile Include="Users\Activity_TestPerformance.cs" />
+    <Compile Include="Users\Activity_TestSearch.cs" />
+    <Compile Include="Users\UserRoleActivity_Manager.cs" />
+    <Compile Include="Users\UserRoleActivity_Manager_Ext.cs" />
+    <Compile Include="Users\UserRoleUser_Manager.cs" />
+    <Compile Include="Users\UserRoleUser_Manager_Ext.cs" />
+    <Compile Include="Users\UserRole_Manager.cs" />
+    <Compile Include="Users\UserRole_Manager_Ext.cs" />
+    <Compile Include="Users\UserRole_TestBasic.cs" />
+    <Compile Include="Users\UserRole_TestPerformance.cs" />
+    <Compile Include="Users\UserRole_TestSearch.cs" />
+    <Compile Include="Users\User_Manager.cs" />
+    <Compile Include="Users\User_Manager_Ext.cs" />
+    <Compile Include="Users\User_TestBasic.cs" />
+    <Compile Include="Users\User_TestPerformance.cs" />
+    <Compile Include="Users\User_TestSearch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\mod\Common\MOD.Configuration\MOD.Configuration %28VS2005%29.csproj">
+      <Project>{89BA63BF-494C-44A4-AFE7-0850B0FE84A9}</Project>
+      <Name>MOD.Configuration %28VS2005%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\mod\Common\MOD.Data\MOD.Data %28VS2005%29.csproj">
+      <Project>{26D37830-368C-47B2-A5C0-F11FFC1C6AF7}</Project>
+      <Name>MOD.Data %28VS2005%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\mod\Common\MOD.Exceptions\MOD.Exceptions %28VS2005%29.csproj">
+      <Project>{7BF0B846-D932-426B-91E6-A4ECC1CB95F6}</Project>
+      <Name>MOD.Exceptions %28VS2005%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\mod\Common\MOD.IO\MOD.IO %28VS2005%29.csproj">
+      <Project>{55BC046D-4035-43FB-99C0-F3B2338F23D4}</Project>
+      <Name>MOD.IO %28VS2005%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\mod\Common\MOD.Test\MOD.Test.csproj">
+      <Project>{549D512B-2890-43CA-B7F1-AA014076AA80}</Project>
+      <Name>MOD.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MW.MComm.WalletSolution\MW.MComm.WalletSolution.csproj">
+      <Project>{25276056-1F16-44DD-BAD5-45C6A3907D1E}</Project>
+      <Name>MW.MComm.WalletSolution</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="wsbalanceEnquiry1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceEnquiry1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceEnquiry1Result" type="tns:balance1Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="balance1Response">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsbalanceEnquiry2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceEnquiry2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceEnquiry2Result" type="tns:balance2Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="balance2Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freeMinutes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freeSeconds" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plan" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsbalanceEnquiry3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ammount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceEnquiry3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceEnquiry3Result" type="tns:balance3Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="balance3Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enoughCredit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsbalanceEnquiry4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceEnquiry4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceEnquiry4Result" type="tns:balance4Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="balance4Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freeMinutes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freeSeconds" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDate2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceProvider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsbalanceDiscount1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ammount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceDiscount1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceDiscount1Result" type="tns:discount1Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="discount1Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="success" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsbalanceDiscount2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TariffCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsbalanceDiscount2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsbalanceDiscount2Result" type="tns:discount2Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="discount2Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="success" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsAddCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ammount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="FiscalName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FiscalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAddCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wsAddCreditResult" type="tns:addCreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="addCreditResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="success" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fiscalId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="invoiceSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="companyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expirationDateLiteralSpanish" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="balance1Response" type="tns:balance1Response" />
+      <s:element name="balance2Response" type="tns:balance2Response" />
+      <s:element name="balance3Response" type="tns:balance3Response" />
+      <s:element name="balance4Response" type="tns:balance4Response" />
+      <s:element name="discount1Response" type="tns:discount1Response" />
+      <s:element name="discount2Response" type="tns:discount2Response" />
+      <s:element name="addCreditResponse" type="tns:addCreditResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="wsbalanceEnquiry1SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry1" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry1SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry2" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry3" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry3Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry4" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceEnquiry4Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceDiscount1" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceDiscount1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2SoapIn">
+    <wsdl:part name="parameters" element="tns:wsbalanceDiscount2" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2SoapOut">
+    <wsdl:part name="parameters" element="tns:wsbalanceDiscount2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAddCredit" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAddCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry1HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry1HttpGetOut">
+    <wsdl:part name="Body" element="tns:balance1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2HttpGetOut">
+    <wsdl:part name="Body" element="tns:balance2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3HttpGetOut">
+    <wsdl:part name="Body" element="tns:balance3Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4HttpGetOut">
+    <wsdl:part name="Body" element="tns:balance4Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1HttpGetOut">
+    <wsdl:part name="Body" element="tns:discount1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2HttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="TariffCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2HttpGetOut">
+    <wsdl:part name="Body" element="tns:discount2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditHttpGetIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+    <wsdl:part name="FiscalName" type="s:string" />
+    <wsdl:part name="FiscalId" type="s:string" />
+    <wsdl:part name="MachineId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:addCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry1HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry1HttpPostOut">
+    <wsdl:part name="Body" element="tns:balance1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry2HttpPostOut">
+    <wsdl:part name="Body" element="tns:balance2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry3HttpPostOut">
+    <wsdl:part name="Body" element="tns:balance3Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceEnquiry4HttpPostOut">
+    <wsdl:part name="Body" element="tns:balance4Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount1HttpPostOut">
+    <wsdl:part name="Body" element="tns:discount1Response" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2HttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="TariffCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsbalanceDiscount2HttpPostOut">
+    <wsdl:part name="Body" element="tns:discount2Response" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditHttpPostIn">
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="TransactionId" type="s:string" />
+    <wsdl:part name="Ammount" type="s:string" />
+    <wsdl:part name="FiscalName" type="s:string" />
+    <wsdl:part name="FiscalId" type="s:string" />
+    <wsdl:part name="MachineId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsAddCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:addCreditResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <wsdl:input message="tns:wsbalanceEnquiry1SoapIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <wsdl:input message="tns:wsbalanceEnquiry2SoapIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <wsdl:input message="tns:wsbalanceEnquiry3SoapIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <wsdl:input message="tns:wsbalanceEnquiry4SoapIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <wsdl:input message="tns:wsbalanceDiscount1SoapIn" />
+      <wsdl:output message="tns:wsbalanceDiscount1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <wsdl:input message="tns:wsbalanceDiscount2SoapIn" />
+      <wsdl:output message="tns:wsbalanceDiscount2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <wsdl:input message="tns:wsAddCreditSoapIn" />
+      <wsdl:output message="tns:wsAddCreditSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <wsdl:input message="tns:wsbalanceEnquiry1HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <wsdl:input message="tns:wsbalanceEnquiry2HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <wsdl:input message="tns:wsbalanceEnquiry3HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <wsdl:input message="tns:wsbalanceEnquiry4HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry4HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <wsdl:input message="tns:wsbalanceDiscount1HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceDiscount1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <wsdl:input message="tns:wsbalanceDiscount2HttpGetIn" />
+      <wsdl:output message="tns:wsbalanceDiscount2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <wsdl:input message="tns:wsAddCreditHttpGetIn" />
+      <wsdl:output message="tns:wsAddCreditHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <wsdl:input message="tns:wsbalanceEnquiry1HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <wsdl:input message="tns:wsbalanceEnquiry2HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <wsdl:input message="tns:wsbalanceEnquiry3HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <wsdl:input message="tns:wsbalanceEnquiry4HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceEnquiry4HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <wsdl:input message="tns:wsbalanceDiscount1HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceDiscount1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <wsdl:input message="tns:wsbalanceDiscount2HttpPostIn" />
+      <wsdl:output message="tns:wsbalanceDiscount2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <wsdl:input message="tns:wsAddCreditHttpPostIn" />
+      <wsdl:output message="tns:wsAddCreditHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceEnquiry1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceEnquiry2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceEnquiry3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceEnquiry4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceDiscount1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <soap:operation soapAction="http://tempuri.org/wsbalanceDiscount2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <soap:operation soapAction="http://tempuri.org/wsAddCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceEnquiry1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceEnquiry2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceEnquiry3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceEnquiry4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceDiscount1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <soap12:operation soapAction="http://tempuri.org/wsbalanceDiscount2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <soap12:operation soapAction="http://tempuri.org/wsAddCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <http:operation location="/wsbalanceEnquiry1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <http:operation location="/wsbalanceEnquiry2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <http:operation location="/wsbalanceEnquiry3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <http:operation location="/wsbalanceEnquiry4" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <http:operation location="/wsbalanceDiscount1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <http:operation location="/wsbalanceDiscount2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <http:operation location="/wsAddCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="wsbalanceEnquiry1">
+      <http:operation location="/wsbalanceEnquiry1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry2">
+      <http:operation location="/wsbalanceEnquiry2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry3">
+      <http:operation location="/wsbalanceEnquiry3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceEnquiry4">
+      <http:operation location="/wsbalanceEnquiry4" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount1">
+      <http:operation location="/wsbalanceDiscount1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsbalanceDiscount2">
+      <http:operation location="/wsbalanceDiscount2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAddCredit">
+      <http:operation location="/wsAddCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="http://216.184.113.85/MW.MComm.Nuevatel.WebService/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

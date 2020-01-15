@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager" xmlns:s1="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager">
+      <s:import namespace="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes" />
+      <s:element name="UpsertOneCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="s1:Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="performCascadeOperation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpsertOneCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpsertOneCustomerResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOneCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="s1:Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="performCascadeOperation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOneCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteOneCustomerResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOneCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOneCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOneCustomerResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCustomerDataResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomerDataByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storedValueBalance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storedValueLockedBalance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomerDataByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCustomerDataByCriteriaResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManyCustomerDataByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastModifiedDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storedValueBalance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storedValueLockedBalance" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maximumListSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortColumn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortDirection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManyCustomerDataByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManyCustomerDataByCriteriaResult" type="s1:CustomerResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerResults" nillable="true" type="s1:CustomerResults" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://modsystems.com/MW.MComm.CarrierSim/Customers/DataTypes">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="Customer">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:PersistedBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="Name" nillable="true" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Address" nillable="true" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueBalance" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueLockedBalance" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneList" type="s1:ArrayOfPhone" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PersistedBusinessObject">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedByUserID" nillable="true" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedByUserID" nillable="true" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Timestamp" nillable="true" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObject" />
+      <s:complexType name="Phone">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:PersistedBusinessObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" default="" name="PhoneNumber" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="Balance" type="s:float" />
+              <s:element minOccurs="1" maxOccurs="1" name="PhoneID" type="s2:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="Name" nillable="true" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueBalance" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" default="0" name="StoredValueLockedBalance" type="s:float" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Phone" nillable="true" type="s1:Phone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerResults">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:StatusObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Results" type="s1:ArrayOfCustomer" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StatusObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" default="" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRecords" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximumListSizeExceeded" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="s1:Customer" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpsertOneCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpsertOneCustomer" />
+  </wsdl:message>
+  <wsdl:message name="UpsertOneCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpsertOneCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOneCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOneCustomer" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOneCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOneCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOneCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOneCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerDataByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerDataByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManyCustomerDataByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManyCustomerDataByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerHttpGetIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataHttpGetIn">
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaHttpGetIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="storedValueBalance" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="storedValueLockedBalance" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaHttpGetIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="storedValueBalance" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="storedValueLockedBalance" type="s:string" />
+    <wsdl:part name="startIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="maximumListSize" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerHttpPostIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOneCustomerHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataHttpPostIn">
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaHttpPostIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="storedValueBalance" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="storedValueLockedBalance" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerDataByCriteriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaHttpPostIn">
+    <wsdl:part name="lastModifiedDateStart" type="s:string" />
+    <wsdl:part name="lastModifiedDateEnd" type="s:string" />
+    <wsdl:part name="storedValueBalance" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="storedValueLockedBalance" type="s:string" />
+    <wsdl:part name="startIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="maximumListSize" type="s:string" />
+    <wsdl:part name="sortColumn" type="s:string" />
+    <wsdl:part name="sortDirection" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManyCustomerDataByCriteriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerResults" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerManagerSoap">
+    <wsdl:operation name="UpsertOneCustomer">
+      <wsdl:input message="tns:UpsertOneCustomerSoapIn" />
+      <wsdl:output message="tns:UpsertOneCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOneCustomer">
+      <wsdl:input message="tns:DeleteOneCustomerSoapIn" />
+      <wsdl:output message="tns:DeleteOneCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneCustomer">
+      <wsdl:input message="tns:GetOneCustomerSoapIn" />
+      <wsdl:output message="tns:GetOneCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <wsdl:input message="tns:GetAllCustomerDataSoapIn" />
+      <wsdl:output message="tns:GetAllCustomerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <wsdl:input message="tns:GetAllCustomerDataByCriteriaSoapIn" />
+      <wsdl:output message="tns:GetAllCustomerDataByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <wsdl:input message="tns:GetManyCustomerDataByCriteriaSoapIn" />
+      <wsdl:output message="tns:GetManyCustomerDataByCriteriaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CustomerManagerHttpGet">
+    <wsdl:operation name="GetOneCustomer">
+      <wsdl:input message="tns:GetOneCustomerHttpGetIn" />
+      <wsdl:output message="tns:GetOneCustomerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <wsdl:input message="tns:GetAllCustomerDataHttpGetIn" />
+      <wsdl:output message="tns:GetAllCustomerDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <wsdl:input message="tns:GetAllCustomerDataByCriteriaHttpGetIn" />
+      <wsdl:output message="tns:GetAllCustomerDataByCriteriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <wsdl:input message="tns:GetManyCustomerDataByCriteriaHttpGetIn" />
+      <wsdl:output message="tns:GetManyCustomerDataByCriteriaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CustomerManagerHttpPost">
+    <wsdl:operation name="GetOneCustomer">
+      <wsdl:input message="tns:GetOneCustomerHttpPostIn" />
+      <wsdl:output message="tns:GetOneCustomerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <wsdl:input message="tns:GetAllCustomerDataHttpPostIn" />
+      <wsdl:output message="tns:GetAllCustomerDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <wsdl:input message="tns:GetAllCustomerDataByCriteriaHttpPostIn" />
+      <wsdl:output message="tns:GetAllCustomerDataByCriteriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <wsdl:input message="tns:GetManyCustomerDataByCriteriaHttpPostIn" />
+      <wsdl:output message="tns:GetManyCustomerDataByCriteriaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerManagerSoap" type="tns:CustomerManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpsertOneCustomer">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/UpsertOneCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOneCustomer">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/DeleteOneCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneCustomer">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetOneCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetAllCustomerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetAllCustomerDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <soap:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetManyCustomerDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerManagerSoap12" type="tns:CustomerManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpsertOneCustomer">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/UpsertOneCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOneCustomer">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/DeleteOneCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneCustomer">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetOneCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetAllCustomerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetAllCustomerDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <soap12:operation soapAction="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager/GetManyCustomerDataByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerManagerHttpGet" type="tns:CustomerManagerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetOneCustomer">
+      <http:operation location="/GetOneCustomer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <http:operation location="/GetAllCustomerData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <http:operation location="/GetAllCustomerDataByCriteria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <http:operation location="/GetManyCustomerDataByCriteria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerManagerHttpPost" type="tns:CustomerManagerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetOneCustomer">
+      <http:operation location="/GetOneCustomer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerData">
+      <http:operation location="/GetAllCustomerData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerDataByCriteria">
+      <http:operation location="/GetAllCustomerDataByCriteria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManyCustomerDataByCriteria">
+      <http:operation location="/GetManyCustomerDataByCriteria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerManager">
+    <wsdl:port name="CustomerManagerSoap" binding="tns:CustomerManagerSoap">
+      <soap:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerManagerSoap12" binding="tns:CustomerManagerSoap12">
+      <soap12:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerManagerHttpGet" binding="tns:CustomerManagerHttpGet">
+      <http:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomerManagerHttpPost" binding="tns:CustomerManagerHttpPost">
+      <http:address location="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

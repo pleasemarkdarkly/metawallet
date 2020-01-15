@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="processSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="internalId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="connectionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="processSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="processSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="processSMSSoapIn">
+    <part name="parameters" element="s0:processSMS" />
+  </message>
+  <message name="processSMSSoapOut">
+    <part name="parameters" element="s0:processSMSResponse" />
+  </message>
+  <portType name="smsAppSampleSoap">
+    <operation name="processSMS">
+      <input message="s0:processSMSSoapIn" />
+      <output message="s0:processSMSSoapOut" />
+    </operation>
+  </portType>
+  <binding name="smsAppSampleSoap" type="s0:smsAppSampleSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="processSMS">
+      <soap:operation soapAction="http://tempuri.org/processSMS" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="smsAppSample">
+    <port name="smsAppSampleSoap" binding="s0:smsAppSampleSoap">
+      <soap:address location="http://localhost/pushTemplate/smsAppSample.asmx" />
+    </port>
+  </service>
+</definitions>

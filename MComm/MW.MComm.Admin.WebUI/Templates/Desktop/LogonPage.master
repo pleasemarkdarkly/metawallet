@@ -1,0 +1,73 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LogonPage.master.cs" Inherits="Templates_Desktop_LogonPage" %>
+<%@ Register TagPrefix="Wilson" Namespace="Wilson.MasterPages" Assembly="WilsonMasterPages" %>
+<%@ Register TagPrefix="MOD" TagName="PrimaryNav" SRC="~/UserControls/Desktop/navigation/PrimaryNav.ascx" %>
+<%@ Register TagPrefix="MOD" TagName="PageHelp" SRC="~/UserControls/Desktop/Utility/PageHelp.ascx" %>
+<%@ Register TagPrefix="MOD" TagName="Footer" SRC="~/UserControls/Desktop/Utility/Footer.ascx" %>
+<%@ Register TagPrefix="MOD" TagName="StatusMessage" SRC="~/UserControls/Desktop/Utility/StatusMessage.ascx" %>
+<%@ Register TagPrefix="MODC" Namespace="MW.MComm.Admin.WebUI.Controls" %>
+<%@ Register TagPrefix="MOD" TagName="Logout" Src="~/UserControls/Desktop/Utility/Logout.ascx"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <link type="text/css" rel="stylesheet" href="~/StyleSheets/admin.css"/>
+    <script src="/MW.MComm.Admin.WebUI/scripts/corp.js" type="text/javascript" language="javascript"></script>
+    <script src="/MW.MComm.Admin.WebUI/scripts/UnsavedFormChanges.js" type="text/javascript" language="javascript"></script>
+    <title>
+        <asp:ContentPlaceHolder id="cphTitle" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder id="cphMetaTags" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body onload="javascript:body_onload(); SizeForm();" onresize="SizeForm();">
+    <form id="form1" runat="server">
+        <div style="top:0; left:0; position:absolute; width:100%;">
+            <div id="Header">
+                <asp:contentplaceholder id="cphHeader1" runat="server">
+                    <div class="HeaderTop">		        
+                        <div class="CornerNav">
+                        </div>
+                    </div>
+                    <div class="HeaderBottom"><img src="/MW.MComm.Admin.WebUI/Images/blank.gif" style="background-repeat:repeat;" alt=""/></div>
+                    <div class="Logo">
+                        <asp:HyperLink Runat="server" NavigateUrl="~/Default.aspx" ID="Home">
+                        <asp:Image ID="Logo" Runat="server" ImageUrl="~/images/mw_logo.gif"></asp:Image>
+                        </asp:HyperLink>
+                    </div>
+                </asp:contentplaceholder>
+				<div id="Help">
+	    			<asp:ContentPlaceHolder ID="cphHelp" runat="server">
+						<table><tr><td width="200"></td><td><MOD:PageHelp id="PageHelp" runat="server"></MOD:PageHelp></td></tr></table>
+    				</asp:ContentPlaceHolder>
+    			</div>
+                <div class="Breadcrumb">
+                    <asp:ContentPlaceHolder ID="cphBreadcrumbNavigation" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <asp:ContentPlaceHolder id="cphSecondaryNavigation" runat="server"></asp:ContentPlaceHolder>
+            </div>
+		
+		    <div id="Container">
+                <div id="LeftNav">
+                    <asp:contentplaceholder id="cphPrimaryNav" runat="server">
+                        <MOD:PrimaryNav id="PrimaryNav1" runat="server"></MOD:PrimaryNav>
+                    </asp:contentplaceholder>
+                </div>
+		        <div id="LoginContent">
+		            <asp:contentplaceholder id="cphContent" runat="server"></asp:contentplaceholder>
+		            <div style="margin-bottom: 5px; margin-top:15px; border-bottom: dotted thin #000;"></div>
+		            <div id="Status">
+		                <asp:contentplaceholder id="cphStatusMessages" runat="server">
+		                    <span class="status"><MOD:StatusMessage id="StatusMessage1" Key="StatusMessages" runat="server"></MOD:StatusMessage></span>
+					        <span class="errors"><MOD:StatusMessage id="errors" Key="ErrorMessages" runat="server"></MOD:StatusMessage></span>
+					    </asp:contentplaceholder>
+		            </div>
+		        </div>
+
+    		</div>
+		    <div id="Footer">
+	            <asp:contentplaceholder id="cphFooter" runat="server">
+		            <MOD:Footer id="Footer1" runat="server"></MOD:Footer>
+		        </asp:contentplaceholder>
+		    </div>
+		</div>
+    </form>
+</body>
+</html>

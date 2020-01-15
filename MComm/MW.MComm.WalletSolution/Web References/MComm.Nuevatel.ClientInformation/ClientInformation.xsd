@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.nuevatel.com" targetNamespace="http://www.nuevatel.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getInformation" type="tns:getInformation" />
+  <xs:element name="getInformationResponse" type="tns:getInformationResponse" />
+  <xs:complexType name="getInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getInformationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:consumptionEntityServicesForClient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consumptionEntityServicesForClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billingPersonDateOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonFullName" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonHouseAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonNit" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonSex" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonType" type="xs:string" />
+      <xs:element minOccurs="0" name="billingPersonWorkAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="clientDateOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" name="clientDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="clientFullName" type="xs:string" />
+      <xs:element minOccurs="0" name="clientHouseAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="clientNit" type="xs:string" />
+      <xs:element minOccurs="0" name="clientPersonType" type="xs:string" />
+      <xs:element minOccurs="0" name="clientSex" type="xs:string" />
+      <xs:element minOccurs="0" name="clientWorkAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityDateOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityDocument" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityFullName" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityHouseAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityLineState" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityNit" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityPersonType" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityPhoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityPlan" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntitySex" type="xs:string" />
+      <xs:element minOccurs="0" name="consEntityWorkAddress" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

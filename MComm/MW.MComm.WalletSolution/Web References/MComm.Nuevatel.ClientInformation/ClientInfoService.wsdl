@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://www.nuevatel.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClientInfoService" targetNamespace="http://www.nuevatel.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://216.184.113.58:8080/ServiceWS/ClientInformation?xsd=1" namespace="http://www.nuevatel.com" />
+    </xsd:schema>
+  </types>
+  <message name="getInformation">
+    <part name="parameters" element="tns:getInformation" />
+  </message>
+  <message name="getInformationResponse">
+    <part name="parameters" element="tns:getInformationResponse" />
+  </message>
+  <portType name="ClientInformation">
+    <operation name="getInformation">
+      <input message="tns:getInformation" />
+      <output message="tns:getInformationResponse" />
+    </operation>
+  </portType>
+  <binding name="ClientInformationPortBinding" type="tns:ClientInformation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getInformation">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ClientInfoService">
+    <port name="ClientInformationPort" binding="tns:ClientInformationPortBinding">
+      <soap:address location="http://216.184.113.58:8080/ServiceWS/ClientInformation" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx?wsdl" docRef="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" xmlns:q1="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager" binding="q1:CustomerManagerSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/MW.MComm.CarrierSim.WebService/Customers/CustomerManager.asmx" xmlns:q2="http://modsystems.com/MW.MComm.CarrierSim.WebService/Customers/CustomerManager" binding="q2:CustomerManagerSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,139 @@
+
+
+/*<copyright>
+Meta Wallet, Inc (c) 2007 All Rights Reserved.
+720 3rd Ave #1100, Seattle WA 98104 - (206) 973-1036
+All Rights Reserved, (c) 2007, covered by Trademark Laws, contents are considered Restricted Secrets by Meta Wallet.  The contents also may only be viewed by Meta Wallet Engineers (employees) and selected partners as outlined in the Licensing Agreement between Meta Wallet and said partners.
+No copying, printing, distribution, or transmission of any contents allowed.  No 3rd Party may open, read, or have access to any part or whole of software source code, configuration files, log files or performance information, including process naming conventions or benchmarks.
+No rights to reproduce this software, configuration files, of log files are granted.  Unauthorized use or disclosure of this information could impact Meta Wallet's competitive advantage.
+Information in this document is considered trade secret.  No license, expressed or implied, by estoppel or otherwise, to any intellectual property rights is granted in this source code, configuration file, or log file.
+</copyright>*/
+using System;
+using System.Xml;
+using System.Xml.Serialization;
+using System.ComponentModel;
+using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using MOD.Data;
+using MOD.Test;
+using MbUnit.Framework;
+using MbUnit.Core;
+using MW.MComm.WalletSolution.BLL.Config;
+using BLL = MW.MComm.WalletSolution.BLL;
+using Utility = MW.MComm.WalletSolution.Utility;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+
+namespace MW.MComm.WalletSolution.UnitTest.Users
+{
+    // ------------------------------------------------------------------------------
+    /// <summary>This class contains support methods to test UserRoleActivity instances.</summary>
+    ///
+    /// File History:
+    /// <created>7/31/2007 (Brian MacDonald)</created>
+    ///
+    /// <remarks></remarks>
+    // ------------------------------------------------------------------------------
+    public partial class UserRoleActivity_Manager
+    {
+
+		#region Properties
+        #endregion Properties
+
+        #region Constructors
+
+        // ------------------------------------------------------------------------------
+        /// <summary>This method is the constructor (currently does nothing).</summary>
+        // ------------------------------------------------------------------------------
+        public UserRoleActivity_Manager()
+        {
+            //
+            // constructor logic
+            //
+        }
+
+        #endregion Constructors
+
+		#region Methods
+
+        // ------------------------------------------------------------------------------
+        /// <summary>This method is used to add UserRoleActivity items.</summary>
+        // ------------------------------------------------------------------------------
+        public static void PopulateItem(BLL.Users.UserRoleActivity item, MOD.Data.NamedObjectCollection useCollections, bool performCascade, bool isAddOperation, bool isCollectionOperation, MOD.Test.TestResults results)
+        {
+            if (item == null)
+            {
+                return;
+            }
+
+            //
+            // populate the UserRoleActivity item
+            //
+            if (isCollectionOperation == true && isAddOperation == true)
+            {
+                BLL.SortableList<BLL.Users.UserRole> itemUserRoleUserRoleCode = null;
+                if (useCollections != null && useCollections["Users.UserRole"] != null)
+                {
+                    itemUserRoleUserRoleCode = (BLL.SortableList<BLL.Users.UserRole>)useCollections["Users.UserRole"];
+                }
+                if (itemUserRoleUserRoleCode == null || itemUserRoleUserRoleCode.Count <= 0)
+                {
+                    itemUserRoleUserRoleCode = BLL.Users.UserRoleManager.GetAllUserRoleData();
+                }
+                if (itemUserRoleUserRoleCode.Count > 0)
+                {
+                    int index = TestHelper.GetInt(0, Math.Max(0, itemUserRoleUserRoleCode.Count-1));
+                    item.UserRoleCode = itemUserRoleUserRoleCode[index].UserRoleCode;
+                }
+                else
+                {
+                    throw new UnitTestException(UnitTestErrorType.Warning, "Could not find values for UserRole.", null);
+                }
+            }
+            if (isCollectionOperation == true && isAddOperation == true)
+            {
+                BLL.SortableList<BLL.Users.Activity> itemActivityActivityCode = null;
+                if (useCollections != null && useCollections["Users.Activity"] != null)
+                {
+                    itemActivityActivityCode = (BLL.SortableList<BLL.Users.Activity>)useCollections["Users.Activity"];
+                }
+                if (itemActivityActivityCode == null || itemActivityActivityCode.Count <= 0)
+                {
+                    itemActivityActivityCode = BLL.Users.ActivityManager.GetAllActivityData();
+                }
+                if (itemActivityActivityCode.Count > 0)
+                {
+                    int index = TestHelper.GetInt(0, Math.Max(0, itemActivityActivityCode.Count-1));
+                    item.ActivityCode = itemActivityActivityCode[index].ActivityCode;
+                }
+                else
+                {
+                    throw new UnitTestException(UnitTestErrorType.Warning, "Could not find values for Activity.", null);
+                }
+            }
+            if (isCollectionOperation == true && isAddOperation == true)
+            {
+                BLL.SortableList<BLL.Users.AccessMode> itemAccessModeAccessModeCode = null;
+                if (useCollections != null && useCollections["Users.AccessMode"] != null)
+                {
+                    itemAccessModeAccessModeCode = (BLL.SortableList<BLL.Users.AccessMode>)useCollections["Users.AccessMode"];
+                }
+                if (itemAccessModeAccessModeCode == null || itemAccessModeAccessModeCode.Count <= 0)
+                {
+                    itemAccessModeAccessModeCode = BLL.Users.AccessModeManager.GetAllAccessModeData();
+                }
+                if (itemAccessModeAccessModeCode.Count > 0)
+                {
+                    int index = TestHelper.GetInt(0, Math.Max(0, itemAccessModeAccessModeCode.Count-1));
+                    item.AccessModeCode = itemAccessModeAccessModeCode[index].AccessModeCode;
+                }
+                else
+                {
+                    throw new UnitTestException(UnitTestErrorType.Warning, "Could not find values for AccessMode.", null);
+                }
+            }
+            PopulateItemCleanup(item, useCollections, performCascade, isAddOperation, isCollectionOperation, results);
+        }
+        #endregion Methods
+    }
+}
